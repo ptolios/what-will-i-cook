@@ -1,9 +1,15 @@
 <template>
   <v-app>
     <Header />
-
     <v-content>
-      
+      <v-container class="fill-height pa-0" fluid>
+        <v-img
+          class="fill-height remove-top-margin"
+          src="https://farm5.staticflickr.com/4137/4788033666_6569900768_b.jpg"
+          position="top center"
+          height="100vh"
+        ></v-img>
+      </v-container>
     </v-content>
   </v-app>
 </template>
@@ -23,4 +29,12 @@ export default Vue.extend({
 });
 </script>
 
-<style></style>
+<style>
+.remove-top-margin {
+  margin-top: -56px;
+}
+v-content {
+  margin-top: 0;
+  padding-top: 0;
+}
+</style>
