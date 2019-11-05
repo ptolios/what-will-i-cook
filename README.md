@@ -1,4 +1,4 @@
-# what-do-i-eat
+# what-should-i-eat
 
 ## Project setup
 ```
