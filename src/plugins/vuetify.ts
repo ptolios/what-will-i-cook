@@ -1,3 +1,4 @@
+import "@mdi/font/css/materialdesignicons.css";
 import Vue from "vue";
 import Vuetify from "vuetify/lib";
 
@@ -13,7 +14,8 @@ export default new Vuetify({
       light: {
         primary: "#FFC501",
         secondary: "#57C701",
-        accent: "#7FC613"
+        accent: "#7FC613",
+        ingredients: "#F1F1F1"
       }
     }
   }
