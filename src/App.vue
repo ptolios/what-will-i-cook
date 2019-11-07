@@ -10,9 +10,12 @@
           gradient="rgba(0,0,0,.4), rgba(0,0,0,.4)"
           height="100vh"
         >
-          <v-row align="center" class="fill-height">
-            <v-col class="mx-12">
-              <SearchBox></SearchBox>
+          <v-row class="fill-height" align="center" justify="center" wrap>
+            <v-col class="mx-4" cols="12">
+              <search-box></search-box>
+            </v-col>
+            <v-col class="mx-4" cols="12">
+              <app-btn color="primary">Surprise Me!</app-btn>
             </v-col>
           </v-row>
         </v-img>
@@ -24,11 +27,13 @@
 <script lang="ts">
 import Vue from "vue";
 import Header from "@/components/Header.vue";
+import AppBtn from "@/components/AppBtn.vue";
 import SearchBox from "@/components/SearchBox.vue";
 
 export default Vue.extend({
   name: "App",
   components: {
+    AppBtn,
     Header,
     SearchBox
   },
