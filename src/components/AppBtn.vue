@@ -14,6 +14,6 @@ export default {
 
 <style scoped>
 button {
-  box-shadow: 0px 5px 2px #fe9200;
+  box-shadow: 0px 5px 1px #fe9200;
 }
 </style>

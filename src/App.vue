@@ -10,12 +10,14 @@
           gradient="rgba(0,0,0,.4), rgba(0,0,0,.4)"
           height="100vh"
         >
-          <v-row class="fill-height" align="center" justify="center" wrap>
-            <v-col class="mx-4" cols="12">
+          <v-row class="fill-height" wrap>
+            <v-col class="offset-1" cols="10">
               <search-box></search-box>
             </v-col>
-            <v-col class="mx-4" cols="12">
-              <app-btn color="primary">Surprise Me!</app-btn>
+            <v-col class="" cols="12">
+              <div class="text-center">
+                <app-btn color="primary">Surprise Me!</app-btn>
+              </div>
             </v-col>
           </v-row>
         </v-img>
