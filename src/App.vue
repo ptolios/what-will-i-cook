@@ -10,13 +10,20 @@
           gradient="rgba(0,0,0,.4), rgba(0,0,0,.4)"
           height="100vh"
         >
-          <v-row class="fill-height" wrap>
+          <v-row class="fill-height align-content-space-around" wrap>
+            <v-col class="pa-1" cols="12">
+              <app-title
+                style="font-family: Pacifico, cursive !important;"
+                class="display-1 primary--text text-center font-weight-medium mb-12"
+                >What should I cook today?</app-title
+              >
+            </v-col>
             <v-col class="offset-1" cols="10">
               <search-box></search-box>
             </v-col>
-            <v-col class="" cols="12">
+            <v-col cols="12">
               <div class="text-center">
-                <app-btn color="primary">Surprise Me!</app-btn>
+                <app-btn color="primary font-weight-bold">Surprise Me!</app-btn>
               </div>
             </v-col>
           </v-row>
@@ -30,12 +37,14 @@
 import Vue from "vue";
 import Header from "@/components/Header.vue";
 import AppBtn from "@/components/AppBtn.vue";
+import AppTitle from "@/components/AppTitle.vue";
 import SearchBox from "@/components/SearchBox.vue";
 
 export default Vue.extend({
   name: "App",
   components: {
     AppBtn,
+    AppTitle,
     Header,
     SearchBox
   },
@@ -46,6 +55,11 @@ export default Vue.extend({
 </script>
 
 <style>
+@import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
+#app {
+  font-family: "Poppins", sans-serif;
+}
+
 .remove-top-margin {
   margin-top: -56px;
 }
@@ -55,7 +69,7 @@ v-content {
   padding-top: 0;
 }
 
-.fill-hght {
+v-row {
   height: 100%;
 }
 </style>
