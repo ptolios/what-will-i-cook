@@ -2,32 +2,24 @@
   <v-app>
     <Header />
     <v-content>
-      <v-container class="fill-height pa-0" fluid>
-        <v-img
-          class="fill-height remove-top-margin align-center"
-          src="https://farm5.staticflickr.com/4137/4788033666_6569900768_b.jpg"
-          position="top center"
-          gradient="rgba(0,0,0,.4), rgba(0,0,0,.4)"
-          height="100vh"
-        >
-          <v-row class="fill-height align-content-space-around" wrap>
-            <v-col class="pa-1" cols="12">
-              <app-title
-                style="font-family: Pacifico, cursive !important;"
-                class="display-1 primary--text text-center font-weight-medium mb-12"
-                >What should I cook today?</app-title
-              >
-            </v-col>
-            <v-col class="offset-1" cols="10">
-              <search-box></search-box>
-            </v-col>
-            <v-col cols="12">
-              <div class="text-center">
-                <app-btn color="primary font-weight-bold">Surprise Me!</app-btn>
-              </div>
-            </v-col>
-          </v-row>
-        </v-img>
+      <v-container class="height100 pa-0 remove-top-margin" fluid>
+        <div class="d-flex flex-column justify-space-around back fill-height">
+          <div class="pa-4">
+            <app-title
+              style="font-family: Pacifico, cursive !important;"
+              class="h1 primary--text text-center font-weight-medium mb-12"
+              >What will I cook today?</app-title
+            >
+          </div>
+          <div class="pa-4">
+            <search-box label="Search using keywords" autofocus></search-box>
+          </div>
+          <div class="pa-4">
+            <div class="text-center">
+              <app-btn color="primary font-weight-bold">Search</app-btn>
+            </div>
+          </div>
+        </div>
       </v-container>
     </v-content>
   </v-app>
@@ -58,6 +50,7 @@ export default Vue.extend({
 @import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
 #app {
   font-family: "Poppins", sans-serif;
+  background: none;
 }
 
 .remove-top-margin {
@@ -69,7 +62,18 @@ v-content {
   padding-top: 0;
 }
 
-v-row {
-  height: 100%;
+.height100 {
+  height: 100vh;
+}
+
+.back {
+  background-image: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.4)
+    ),
+    url(https://farm5.staticflickr.com/4137/4788033666_6569900768_b.jpg);
+  background-size: cover;
+  background-position: top center;
 }
 </style>
