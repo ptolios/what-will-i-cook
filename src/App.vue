@@ -3,22 +3,15 @@
     <Header />
     <v-content>
       <v-container class="height100 pa-0 remove-top-margin" fluid>
-        <div class="d-flex flex-column justify-space-around back fill-height">
-          <div class="pa-4">
+        <div class="d-flex flex-column back fill-height">
+          <div class="app-title d-flex align-center justify-center">
             <app-title
               style="font-family: Pacifico, cursive !important;"
-              class="h1 primary--text text-center font-weight-medium mb-12"
+              class="h1 primary--text text-center font-weight-medium"
               >What will I cook today?</app-title
             >
           </div>
-          <div class="pa-4">
-            <search-box label="Search using keywords" autofocus></search-box>
-          </div>
-          <div class="pa-4">
-            <div class="text-center">
-              <app-btn color="primary font-weight-bold">Search</app-btn>
-            </div>
-          </div>
+          <search-form></search-form>
         </div>
       </v-container>
     </v-content>
@@ -28,17 +21,15 @@
 <script lang="ts">
 import Vue from "vue";
 import Header from "@/components/Header.vue";
-import AppBtn from "@/components/AppBtn.vue";
 import AppTitle from "@/components/AppTitle.vue";
-import SearchBox from "@/components/SearchBox.vue";
+import SearchForm from "@/components/SearchForm.vue";
 
 export default Vue.extend({
   name: "App",
   components: {
-    AppBtn,
     AppTitle,
     Header,
-    SearchBox
+    SearchForm
   },
   data: () => ({
     //
@@ -64,6 +55,10 @@ v-content {
 
 .height100 {
   height: 100vh;
+}
+
+.app-title {
+  height: 50%;
 }
 
 .back {
