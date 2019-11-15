@@ -6,7 +6,7 @@
 
     <div class="pa-4">
       <div class="text-center">
-        <app-btn color="primary font-weight-bold">Search</app-btn>
+        <app-btn color="primary" class="font-weight-bold">Search</app-btn>
       </div>
     </div>
   </v-form>
@@ -20,7 +20,9 @@ export default {
     "search-box": SearchBox,
     "app-btn": AppBtn
   },
-  data() {}
+  data() {
+    return {};
+  }
 };
 </script>
 
