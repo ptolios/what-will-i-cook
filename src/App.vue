@@ -31,9 +31,11 @@ export default Vue.extend({
     Header,
     SearchForm
   },
-  data: () => ({
-    //
-  })
+  data() {
+    return {
+      //
+    };
+  }
 });
 </script>
 

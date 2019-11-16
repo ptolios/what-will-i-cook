@@ -1,6 +1,5 @@
 <template>
   <v-text-field
-    class="align-self-center"
     color="secondary"
     background-color="ingredients"
     :label="label"
@@ -8,8 +7,11 @@
     rounded
     single-line
     filled
-    append-icon="mdi-search"
-  ></v-text-field>
+  >
+    <v-btn slot="append" color="secondary" class="mx-0" fab dark>
+      <v-icon color="white">search</v-icon>
+    </v-btn>
+  </v-text-field>
 </template>
 
 <script>
@@ -18,4 +20,20 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+::v-deep .v-input__append-inner {
+  padding: 0 !important;
+  margin: 0 !important;
+  height: 100%;
+  position: relative;
+  right: -24px;
+}
+
+.v-btn {
+  box-shadow: none;
+}
+
+.v-icon {
+  font-size: 38px !important;
+}
+</style>
