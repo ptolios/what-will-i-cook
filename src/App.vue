@@ -12,6 +12,18 @@
             >
           </div>
           <search-form></search-form>
+          <div class="pa-4">
+            <div class="text-center">
+              <h2 class="primary--text">- or -</h2>
+            </div>
+          </div>
+          <div class="pa-4">
+            <div class="text-center">
+              <app-btn color="primary" class="font-weight-bold">
+                Surprise Me!</app-btn
+              >
+            </div>
+          </div>
         </div>
       </v-container>
     </v-content>
@@ -22,12 +34,14 @@
 import Vue from "vue";
 import Header from "@/components/Header.vue";
 import AppTitle from "@/components/AppTitle.vue";
+import AppBtn from "@/components/AppBtn.vue";
 import SearchForm from "@/components/SearchForm.vue";
 
 export default Vue.extend({
   name: "App",
   components: {
     AppTitle,
+    AppBtn,
     Header,
     SearchForm
   },
