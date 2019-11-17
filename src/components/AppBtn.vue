@@ -8,7 +8,12 @@
 
 <script>
 export default {
-  props: ["color"],
+  props: {
+    color: {
+      type: String,
+      default: "primary"
+    }
+  },
   data() {
     return {
       btnClass: ""
@@ -21,7 +26,6 @@ export default {
     if (this.$props.color === "secondary") {
       this.btnClass = "btn-class-secondary";
     }
-    console.log(this.$props.color);
   }
 };
 </script>
