@@ -6,7 +6,6 @@
         <div class="d-flex flex-column back fill-height">
           <div class="app-title d-flex align-center justify-center">
             <app-title
-              style="font-family: Pacifico, cursive !important;"
               class="h1 primary--text text-center font-weight-medium"
               >What will I cook today?</app-title
             >
@@ -19,8 +18,8 @@
           </div>
           <div class="pa-4">
             <div class="text-center">
-              <app-btn color="primary" class="font-weight-bold">
-                Surprise Me!</app-btn
+              <app-btn color="primary" class="font-weight-bold"
+                >Surprise Me!</app-btn
               >
             </div>
           </div>
