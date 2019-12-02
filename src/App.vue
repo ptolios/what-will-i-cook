@@ -5,8 +5,7 @@
       <v-container class="height100 pa-0 remove-top-margin" fluid>
         <div class="d-flex flex-column back fill-height">
           <div class="app-title d-flex align-center justify-center">
-            <app-title
-              class="h1 primary--text text-center font-weight-medium"
+            <app-title class="h1 primary--text text-center font-weight-medium"
               >What will I cook today?</app-title
             >
           </div>
@@ -18,12 +17,13 @@
           </div>
           <div class="pa-4">
             <div class="text-center">
-              <app-btn color="primary" class="font-weight-bold"
-                >Surprise Me!</app-btn
-              >
+              <app-btn color="primary" class="font-weight-bold">
+                Surprise Me!
+              </app-btn>
             </div>
           </div>
         </div>
+        <random-recipes id="random-recipes"></random-recipes>
       </v-container>
     </v-content>
   </v-app>
@@ -34,6 +34,7 @@ import Vue from "vue";
 import Header from "@/components/Header.vue";
 import AppTitle from "@/components/AppTitle.vue";
 import AppBtn from "@/components/AppBtn.vue";
+import RandomRecipes from "@/components/RandomRecipes.vue";
 import SearchForm from "@/components/SearchForm.vue";
 
 export default Vue.extend({
@@ -42,6 +43,7 @@ export default Vue.extend({
     AppTitle,
     AppBtn,
     Header,
+    RandomRecipes,
     SearchForm
   },
   data() {
