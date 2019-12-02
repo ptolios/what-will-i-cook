@@ -1,6 +1,7 @@
 <template>
   <v-app>
     <Header />
+    <!-- TODO: change header background from transparent to white when scrolling down -->
     <v-content>
       <v-container class="height100 pa-0 remove-top-margin" fluid>
         <div class="d-flex flex-column back fill-height">
