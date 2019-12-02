@@ -1,5 +1,5 @@
 <template>
-  <h1 :color="color">
+  <h1 style="font-family: Pacifico, cursive !important;" :color="color">
     <slot></slot>
   </h1>
 </template>
