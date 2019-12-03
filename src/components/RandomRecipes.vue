@@ -2,8 +2,8 @@
   <div>
     <v-row class="ma-2">
       <v-col
-        cols="12"
-        xs="12"
+        cols="8"
+        offset="2"
         class="primary--text"
         align="center"
         align-self="center"
@@ -23,7 +23,7 @@
         v-else
         v-for="recipe in recipes"
         :key="recipe.id"
-        xs="12"
+        cols="8"
         sm="6"
         md="3"
       >

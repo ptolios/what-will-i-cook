@@ -8,12 +8,10 @@
         >
       </v-chip>
     </v-img>
-    <v-card-title>
-      <v-card-text
-        class="title text-center font-weight-black"
+    <v-card-title
+        class="subtitle-1 text-center font-weight-black"
         style="font-family: Poppins !important;"
-        >{{ recipe.title }}</v-card-text
-      >
+        >{{ recipe.title }}
     </v-card-title>
   </v-card>
 </template>
