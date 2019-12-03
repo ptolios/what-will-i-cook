@@ -23,6 +23,7 @@
         v-else
         v-for="recipe in recipes"
         :key="recipe.id"
+        class="pa-0"
         cols="8"
         sm="6"
         md="3"
