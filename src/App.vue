@@ -24,7 +24,7 @@
             </div>
           </div>
         </div>
-        <random-recipes id="random-recipes"></random-recipes>
+        <recipes-grid id="random-recipes"></recipes-grid>
       </v-container>
     </v-content>
   </v-app>
@@ -35,7 +35,7 @@ import Vue from "vue";
 import Header from "@/components/Header.vue";
 import AppTitle from "@/components/AppTitle.vue";
 import AppBtn from "@/components/AppBtn.vue";
-import RandomRecipes from "@/components/RandomRecipes.vue";
+import RecipesGrid from "@/components/RecipesGrid.vue";
 import SearchForm from "@/components/SearchForm.vue";
 
 export default Vue.extend({
@@ -44,7 +44,7 @@ export default Vue.extend({
     AppTitle,
     AppBtn,
     Header,
-    RandomRecipes,
+    RecipesGrid,
     SearchForm
   },
   data() {
