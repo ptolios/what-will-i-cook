@@ -18,13 +18,16 @@
           </div>
           <div class="pa-4">
             <div class="text-center">
-              <app-btn color="primary" class="font-weight-bold">
-                Surprise Me!
+              <app-btn
+                @btnclicked="$vuetify.goTo($refs.recipes)"
+                color="primary"
+                class="font-weight-bold"
+                >Surprise Me!
               </app-btn>
             </div>
           </div>
         </div>
-        <recipes-grid id="random-recipes"></recipes-grid>
+        <recipes-grid ref="recipes"></recipes-grid>
       </v-container>
     </v-content>
   </v-app>
