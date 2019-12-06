@@ -66,7 +66,10 @@ const fetchRecipe = async (params: RecipeParams, config: Config) => {
   }
 };
 
-const getRandomRecipes = async (params: RandomRecipesParams, config: Config) => {
+const getRandomRecipes = async (
+  params: RandomRecipesParams,
+  config: Config
+) => {
   const { apiKey, baseURL } = config;
   const { number } = params;
   const URL = baseURL + "/random";
@@ -84,4 +87,12 @@ const getRandomRecipes = async (params: RandomRecipesParams, config: Config) => 
   }
 };
 
-export { fetchRecipe, searchRecipes, getRandomRecipes, Config, SearchParams, RecipeParams, RandomRecipesParams };
+export {
+  fetchRecipe,
+  searchRecipes,
+  getRandomRecipes,
+  Config,
+  SearchParams,
+  RecipeParams,
+  RandomRecipesParams
+};

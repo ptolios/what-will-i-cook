@@ -11,8 +11,8 @@ import dotenv from "dotenv";
 
 dotenv.config({ path: "../" });
 
-const apiKey: string = process.env.SPOONACULAR_API_KEY || "";
-const baseURL: string = process.env.SPOONACULAR_API_URL || "";
+const apiKey: string = process.env.VUE_APP_SPOONACULAR_API_KEY || "";
+const baseURL: string = process.env.VUE_APP_SPOONACULAR_API_URL || "";
 
 let config: Config = {
   apiKey,
