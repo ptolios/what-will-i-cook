@@ -18,7 +18,7 @@
         indeterminate
         color="secondary"
       ></v-progress-circular>
-      <v-card v-else-if="error" class="primary" height="600px">Error</v-card>
+      <v-card v-else-if="error" class="primary">Error: {{ error }}</v-card>
       <v-col
         v-else
         v-for="recipe in recipes"
@@ -35,24 +35,39 @@
 </template>
 
 <script>
+// import dotenv from "dotenv";
+import { getRandomRecipes } from "@/api-utils/spoonacular-api";
 import RecipeCard from "@/components/RecipeCard.vue";
-import recipes from "@/random-recipes";
-const recipeProps = {
-  id: 998877,
-  title: "Blueberry, Chocolate & Cocao Superfood Pancakes",
-  image: "https://spoonacular.com/recipeImages/716429-556x370.jpg",
-  readyInMinutes: 45
-};
+// dotenv.config({ path: "../../" });
+
+const apiKey = process.env.VUE_APP_SPOONACULAR_API_KEY || "";
+const baseURL = process.env.VUE_APP_SPOONACULAR_API_URL || "";
+const config = { apiKey, baseURL };
+
 export default {
   components: {
     "recipe-card": RecipeCard
   },
   data() {
     return {
-      loading: false,
+      loading: true,
       error: false,
-      recipes
+      recipes: {}
     };
+  },
+  mounted() {
+    console.log("apiKey = " + apiKey);
+    console.log("baseURL = " + baseURL);
+    getRandomRecipes({ number: 5 }, config)
+      .then(response => {
+        const { data } = response;
+        this.recipes = data.recipes;
+        this.loading = false;
+      })
+      .catch(error => {
+        this.loading = false;
+        this.error = error;
+      });
   }
 };
 </script>
