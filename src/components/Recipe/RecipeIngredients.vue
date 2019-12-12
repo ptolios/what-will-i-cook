@@ -1,8 +1,7 @@
 <template>
   <v-list class="ingredients px-3 mt-4" disabled dense>
     <div class="d-flex justify-center py-6">
-      <v-icon color="primary">list_alt</v-icon>
-      <v-subheader class="title primary--text font-weight-black ml-4">
+      <v-subheader class="title primary--text font-weight-black">
         Ingredients
       </v-subheader>
     </div>
