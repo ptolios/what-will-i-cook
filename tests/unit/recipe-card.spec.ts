@@ -18,12 +18,16 @@ describe("RecipeCard.vue", () => {
     expect(Object.keys(recipeCardComponent.props())).toContain("recipe");
     expect(recipeCardComponent.props("recipe")).toBeInstanceOf(Object);
     expect(recipeCardComponent.props("recipe").id).toEqual(recipeProps.id);
-    expect(recipeCardComponent.props("recipe").title).toEqual(recipeProps.title);
-    expect(recipeCardComponent.props("recipe").image).toEqual(recipeProps.image);
+    expect(recipeCardComponent.props("recipe").title).toEqual(
+      recipeProps.title
+    );
+    expect(recipeCardComponent.props("recipe").image).toEqual(
+      recipeProps.image
+    );
     expect(recipeCardComponent.props("recipe").readyInMinutes).toEqual(
       recipeProps.readyInMinutes
     );
   });
 
-  it("renders the correct HTML nodes", () => { });
+  it("renders the correct HTML nodes", () => {});
 });

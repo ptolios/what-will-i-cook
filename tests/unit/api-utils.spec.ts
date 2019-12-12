@@ -108,7 +108,7 @@ describe("searchRecipes({query: 'burger', number: 2})", () => {
 
 describe("getRandomRecipes({number: 5})", () => {
   const params: RandomRecipesParams = {
-    number: 5,
+    number: 5
   };
 
   let data: any, status: string, apiResponse: any;
