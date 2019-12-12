@@ -3,7 +3,7 @@
     <v-card-title class="title text-center font-weight-black mx-4">
       <slot name="title"></slot>
     </v-card-title>
-    <div class="d-flex justify-space-between px-4 py-2">
+    <div class="d-flex justify-space-around py-2">
       <div
         v-for="(sign, index) in signs"
         :key="index"
