@@ -27,6 +27,7 @@
         </template>
       </recipe-overview>
       <recipe-ingredients :ingredients="ingredients"></recipe-ingredients>
+      <recipe-instructions :instructions="instructions"></recipe-instructions>
     </div>
   </v-container>
 </template>
@@ -35,6 +36,7 @@
 import { fetchRecipe } from "@/api-utils/spoonacular-api";
 import RecipeOverview from "@/components/Recipe/RecipeOverview.vue";
 import RecipeIngredients from "@/components/Recipe/RecipeIngredients.vue";
+import RecipeInstructions from "@/components/Recipe/RecipeInstructions.vue";
 
 const apiKey = process.env.VUE_APP_SPOONACULAR_API_KEY || "";
 const baseURL = process.env.VUE_APP_SPOONACULAR_API_URL || "";
@@ -43,7 +45,8 @@ const config = { apiKey, baseURL };
 export default {
   components: {
     RecipeOverview,
-    RecipeIngredients
+    RecipeIngredients,
+    RecipeInstructions
   },
   data() {
     return {
@@ -58,6 +61,9 @@ export default {
     },
     ingredients() {
       return this.recipe.extendedIngredients;
+    },
+    instructions() {
+      return this.recipe.analyzedInstructions[0].steps;
     }
   },
   mounted() {
@@ -66,7 +72,6 @@ export default {
       .then(response => {
         const { data } = response;
         this.recipe = data;
-        console.log(data);
         this.loading = false;
       })
       .catch(error => {
