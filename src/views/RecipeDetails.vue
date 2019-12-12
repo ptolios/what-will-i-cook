@@ -26,21 +26,7 @@
           {{ recipe.servings }}
         </template>
       </recipe-overview>
-      <v-list class="ingredients px-3 mt-4" disabled dense>
-        <div class="d-flex justify-center py-6">
-          <v-icon color="primary">list_alt</v-icon>
-          <v-subheader class="title primary--text font-weight-black ml-4">
-            Ingredients
-          </v-subheader>
-        </div>
-        <v-list-item-group>
-          <recipe-ingredient
-            v-for="(ingredient, index) in ingredients"
-            :key="index"
-            :ingredient="ingredient.original"
-          />
-        </v-list-item-group>
-      </v-list>
+      <recipe-ingredients :ingredients="ingredients"></recipe-ingredients>
     </div>
   </v-container>
 </template>
@@ -48,7 +34,7 @@
 <script>
 import { fetchRecipe } from "@/api-utils/spoonacular-api";
 import RecipeOverview from "@/components/Recipe/RecipeOverview.vue";
-import RecipeIngredient from "@/components/Recipe/RecipeIngredient.vue";
+import RecipeIngredients from "@/components/Recipe/RecipeIngredients.vue";
 
 const apiKey = process.env.VUE_APP_SPOONACULAR_API_KEY || "";
 const baseURL = process.env.VUE_APP_SPOONACULAR_API_URL || "";
@@ -57,7 +43,7 @@ const config = { apiKey, baseURL };
 export default {
   components: {
     RecipeOverview,
-    RecipeIngredient
+    RecipeIngredients
   },
   data() {
     return {
