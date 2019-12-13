@@ -1,30 +1,32 @@
 <template>
-  <v-container class="height100 pa-0 remove-top-margin" fluid>
-    <div class="d-flex flex-column back fill-height">
-      <div class="app-title d-flex align-center justify-center">
-        <app-title class="h1 primary--text text-center font-weight-medium"
-          >What will I cook today?</app-title
-        >
-      </div>
-      <search-form></search-form>
-      <div class="pa-4">
-        <div class="text-center">
-          <h2 class="primary--text">- or -</h2>
-        </div>
-      </div>
-      <div class="pa-4">
-        <div class="text-center">
-          <app-btn
-            @btnclicked="$vuetify.goTo($refs.recipes)"
-            color="primary"
-            class="font-weight-bold"
-            >Surprise Me!</app-btn
+  <div>
+    <v-container class="height100 pa-0" fluid>
+      <div class="d-flex flex-column back fill-height">
+        <div class="app-title d-flex align-center justify-center">
+          <app-title class="h1 primary--text text-center font-weight-medium"
+            >What will I cook today?</app-title
           >
         </div>
+        <search-form></search-form>
+        <div class="pa-4">
+          <div class="text-center">
+            <h2 class="primary--text">- or -</h2>
+          </div>
+        </div>
+        <div class="pa-4">
+          <div class="text-center">
+            <app-btn
+              @btnclicked="$vuetify.goTo($refs.recipes)"
+              color="primary"
+              class="font-weight-bold"
+              >Surprise Me!</app-btn
+            >
+          </div>
+        </div>
       </div>
-    </div>
+    </v-container>
     <recipes-grid ref="recipes"></recipes-grid>
-  </v-container>
+  </div>
 </template>
 
 <script lang="ts">
