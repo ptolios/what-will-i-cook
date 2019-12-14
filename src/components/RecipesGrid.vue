@@ -56,8 +56,6 @@ export default {
     };
   },
   mounted() {
-    console.log("apiKey = " + apiKey);
-    console.log("baseURL = " + baseURL);
     getRandomRecipes({ number: 5 }, config)
       .then(response => {
         const { data } = response;
