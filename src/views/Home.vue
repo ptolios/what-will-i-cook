@@ -51,12 +51,6 @@ export default {
 </script>
 
 <style>
-@import url("https://fonts.googleapis.com/css?family=Poppins&display=swap");
-#app {
-  font-family: "Poppins", sans-serif;
-  background: none;
-}
-
 .remove-top-margin {
   margin-top: -56px;
 }
