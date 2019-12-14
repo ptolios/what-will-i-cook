@@ -13,7 +13,7 @@
 import Vue from "vue";
 
 import AppHeader from "@/components/Header.vue";
-import AppFooter from "@/components/AppFooter.vue";
+import AppFooter from "@/components/Footer.vue";
 
 export default Vue.extend({
   name: "App",
