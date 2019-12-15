@@ -71,7 +71,6 @@ const getRandomRecipes = async (
   config: Config
 ) => {
   const { apiKey, baseURL } = config;
-  const { number } = params;
   const URL = baseURL + "/random";
   try {
     const response = await axios.get(URL, {
@@ -79,10 +78,6 @@ const getRandomRecipes = async (
     });
     return response;
   } catch (error) {
-    console.error(
-      "Could not fetch random recipes\n",
-      error.response.data.code + " - " + error.response.data.message
-    );
     return error;
   }
 };
