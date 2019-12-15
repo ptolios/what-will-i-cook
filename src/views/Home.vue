@@ -16,7 +16,7 @@
         <div class="pa-4">
           <div class="text-center">
             <app-btn
-              @btnclicked="$vuetify.goTo($refs.recipes)"
+              @btnclicked="randomRecipeId"
               color="primary"
               class="font-weight-bold"
               >Surprise Me!</app-btn
@@ -34,6 +34,11 @@ import AppTitle from "@/components/AppTitle.vue";
 import AppBtn from "@/components/AppBtn.vue";
 import RecipesGrid from "@/components/RecipesGrid.vue";
 import SearchForm from "@/components/SearchForm.vue";
+import { getRandomRecipes } from "@/api-utils/spoonacular-api";
+
+const apiKey = process.env.VUE_APP_SPOONACULAR_API_KEY || "";
+const baseURL = process.env.VUE_APP_SPOONACULAR_API_URL || "";
+const config = { apiKey, baseURL };
 
 export default {
   components: {
@@ -46,15 +51,20 @@ export default {
     return {
       //
     };
+  },
+  methods: {
+    randomRecipeId() {
+      getRandomRecipes({ number: 1 }, config).then(response => {
+        const { data } = response;
+        const id = data.recipes[0].id;
+        this.$router.push({ name: "recipe", params: { id } });
+      });
+    }
   }
 };
 </script>
 
 <style>
-.remove-top-margin {
-  margin-top: -56px;
-}
-
 v-content {
   margin-top: 0;
   padding-top: 0;
