@@ -40,10 +40,6 @@ const searchRecipes = async (params: SearchParams, config: Config) => {
     });
     return response;
   } catch (error) {
-    console.error(
-      "Could not fetch search results\n",
-      error.response.data.code + " - " + error.response.data.message
-    );
     return error;
   }
 };
@@ -58,10 +54,6 @@ const fetchRecipe = async (params: RecipeParams, config: Config) => {
     });
     return response;
   } catch (error) {
-    console.error(
-      "Could not fetch Recipe data\n",
-      error.response.data.code + " - " + error.response.data.message
-    );
     return error;
   }
 };
