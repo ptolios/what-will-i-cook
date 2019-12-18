@@ -14,19 +14,30 @@
       <v-col cols="auto">
         <search-box class="mt-2 mx-6"></search-box>
       </v-col>
+      <v-col cols="12">
+        <horizontal-card
+          v-for="recipe in response.results"
+          :key="recipe.id"
+          :recipe="recipe"
+        ></horizontal-card>
+      </v-col>
     </v-row>
   </v-container>
 </template>
 
 <script>
 import SearchBox from "@/components/SearchBox.vue";
+import HorizontalCard from "@/components/Recipe/RecipeCardHorizontal.vue";
+import response from "@/search-results";
 export default {
   components: {
-    SearchBox
+    SearchBox,
+    HorizontalCard
   },
   data() {
     return {
-      query: "Pasta"
+      query: "Pasta",
+      response
     };
   }
 };
