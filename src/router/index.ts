@@ -2,6 +2,7 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 import Home from "@/views/Home.vue";
 import RecipePage from "@/views/RecipePage.vue";
+import SearchResults from "@/views/SearchResults.vue";
 
 Vue.use(VueRouter);
 
@@ -15,6 +16,11 @@ const routes = [
     path: "/recipe/:id",
     name: "recipe",
     component: RecipePage
+  },
+  {
+    path: "/search",
+    name: "search",
+    component: SearchResults
   },
   {
     path: "/about",
