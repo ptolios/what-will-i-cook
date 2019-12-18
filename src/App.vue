@@ -1,6 +1,6 @@
 <template>
   <v-app>
-    <app-header />
+    <app-header :invertedScroll="invertedScroll" />
     <v-content>
       <router-view></router-view>
     </v-content>
@@ -20,6 +20,11 @@ export default Vue.extend({
   components: {
     AppHeader,
     AppFooter
+  },
+  data() {
+    return {
+      invertedScroll: false
+    };
   }
 });
 </script>
