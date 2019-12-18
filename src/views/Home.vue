@@ -3,9 +3,11 @@
     <v-container class="height100 pa-0" fluid>
       <div class="d-flex flex-column back fill-height">
         <div class="app-title d-flex align-center justify-center">
-          <app-title class="h1 primary--text text-center font-weight-medium"
-            >What will I cook today?</app-title
-          >
+          <app-title>
+            <h1 class="primary--text text-center font-weight-medium">
+              What will I cook today?
+            </h1>
+          </app-title>
         </div>
         <search-form></search-form>
         <div class="pa-4">

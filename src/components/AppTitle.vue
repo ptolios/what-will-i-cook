@@ -1,13 +1,11 @@
 <template>
-  <h1 style="font-family: Pacifico, cursive !important;" :color="color">
+  <p style="font-family: Pacifico, cursive !important;">
     <slot></slot>
-  </h1>
+  </p>
 </template>
 
 <script>
-export default {
-  props: ["color"]
-};
+export default {};
 </script>
 <style scoped>
 @import url("https://fonts.googleapis.com/css?family=Pacifico&display=swap");
