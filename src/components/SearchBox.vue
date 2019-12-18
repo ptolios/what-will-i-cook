@@ -4,19 +4,20 @@
     background-color="ingredients"
     :label="label"
     :autofocus="autofocus"
+    :height="height"
     rounded
     single-line
     filled
   >
     <v-btn slot="append" color="secondary" class="mx-0" fab dark>
-      <v-icon color="white">search</v-icon>
+      <v-icon color="white" size="2.2em">search</v-icon>
     </v-btn>
   </v-text-field>
 </template>
 
 <script>
 export default {
-  props: ["label", "autofocus"]
+  props: ["label", "autofocus", "height"]
 };
 </script>
 
@@ -31,9 +32,5 @@ export default {
 
 .v-btn {
   box-shadow: none;
-}
-
-.v-icon {
-  font-size: 38px !important;
 }
 </style>
