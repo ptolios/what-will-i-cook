@@ -1,5 +1,5 @@
 <template>
-  <v-card :href="'/recipe/' + recipe.id" color="primary" dark>
+  <v-card color="primary" dark>
     <v-img :src="imageUrl" aspect-ratio="1">
       <v-chip class="mt-2 ml-2" color="primary" small>
         <v-icon class small>timer</v-icon>
@@ -14,7 +14,12 @@
         style="font-family: Poppins !important;"
         >{{ recipe.title }}</v-card-title
       >
-      <app-btn class="mx-auto mt-2 mb-4" color="secondary" small>
+      <app-btn
+        :href="'/recipe/' + recipe.id"
+        class="mx-auto mt-2 mb-4"
+        color="secondary"
+        small
+      >
         Details
       </app-btn>
     </div>
