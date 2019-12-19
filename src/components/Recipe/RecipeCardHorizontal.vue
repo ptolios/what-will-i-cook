@@ -20,7 +20,9 @@
         color="secondary"
         small
       >
-        Details
+        <span class="font-weight-black">
+          Details
+        </span>
       </app-btn>
     </div>
   </v-card>
