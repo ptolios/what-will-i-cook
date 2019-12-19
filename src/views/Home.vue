@@ -21,6 +21,7 @@
               @btnclicked="randomRecipeId"
               color="primary"
               class="font-weight-bold"
+              x-large
               >Surprise Me!</app-btn
             >
           </div>
