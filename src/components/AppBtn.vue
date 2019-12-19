@@ -1,10 +1,10 @@
 <template>
   <v-btn
+    v-bind="$attrs"
     @click="$emit('btnclicked')"
     :class="btnClass"
     :color="color"
     rounded
-    x-large
   >
     <span class="text-capitalize">
       <slot></slot>
