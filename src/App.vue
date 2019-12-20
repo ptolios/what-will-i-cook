@@ -4,7 +4,6 @@
     <v-content>
       <router-view></router-view>
     </v-content>
-    <!-- TODO: change header background from transparent to white when scrolling down -->
     <app-footer />
   </v-app>
 </template>
