@@ -29,7 +29,7 @@
 </template>
 
 <script>
-import AppBtn from "@/components/AppBtn.vue";
+import AppBtn from "@/components/common/AppBtn.vue";
 export default {
   components: {
     AppBtn
