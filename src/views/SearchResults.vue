@@ -10,15 +10,15 @@
       </v-col>
       <v-col class="py-1" cols="12">
         <h4 class="text-center secondary--text font-weight-regular">
-          You are searching for:
-          <span class="font-italic">{{ query }}</span>
+          for
+          <span class="font-italic">{{ initialQuery }}</span>
         </h4>
       </v-col>
       <v-col cols="12">
         <search-box
           class="mt-2 mx-6"
           v-model="query"
-          label="Search using keywords"
+          label="Search again"
         ></search-box>
       </v-col>
       <v-col
@@ -46,9 +46,13 @@ export default {
   },
   data() {
     return {
+      initialQuery: "",
       query: "",
       response
     };
+  },
+  mounted() {
+    this.initialQuery = this.$route.query.query;
   }
 };
 </script>
