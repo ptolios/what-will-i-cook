@@ -8,7 +8,15 @@
     :value="val"
     @input="$emit('input', (val = $event))"
   >
-    <v-btn slot="append" color="secondary" class="mx-0" fab dark>
+    <v-btn
+      slot="append"
+      color="secondary"
+      class="mx-0"
+      fab
+      dark
+      type="submit"
+      @click.prevent="$emit('submit', value)"
+    >
       <v-icon color="white" size="2.2em">search</v-icon>
     </v-btn>
   </v-text-field>

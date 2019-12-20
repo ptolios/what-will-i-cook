@@ -1,8 +1,6 @@
 <template>
   <v-form>
-    <div class="pa-4">
-      <search-box label="Search using keywords" autofocus></search-box>
-    </div>
+    <search-box @submit="goTo" :label="label" v-model="query"></search-box>
   </v-form>
 </template>
 
@@ -12,8 +10,18 @@ export default {
   components: {
     "search-box": SearchBox
   },
+  props: {
+    label: String
+  },
   data() {
-    return {};
+    return {
+      query: ""
+    };
+  },
+  methods: {
+    goTo(event) {
+      this.$router.push({ path: "/search", query: { query: event } });
+    }
   }
 };
 </script>
