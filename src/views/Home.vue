@@ -9,7 +9,7 @@
             </h1>
           </app-title>
         </div>
-        <search-form></search-form>
+        <search-form class="px-4" label="Search using keywords" />
         <div class="pa-4">
           <div class="text-center">
             <h2 class="primary--text">- or -</h2>

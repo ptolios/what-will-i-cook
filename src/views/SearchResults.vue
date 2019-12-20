@@ -1,25 +1,21 @@
 <template>
   <v-container>
-    <v-row class="flex-grow-0" justify="center" align="baseline">
-      <v-col cols="12" class="py-1">
+    <v-row class="flex-grow-0" justify="start" align="baseline">
+      <v-col cols="12">
+        <search-form class="mt-2 mx-6" label="Search again" />
+      </v-col>
+      <v-col cols="12" class="py-0">
         <div class="my-0">
           <h1 class="text-center primary--text font-weight-black">
             Search Results
           </h1>
         </div>
       </v-col>
-      <v-col class="py-1" cols="12">
+      <v-col class="py-1 mb-4" cols="12">
         <h4 class="text-center secondary--text font-weight-regular">
           for
           <span class="font-italic">{{ initialQuery }}</span>
         </h4>
-      </v-col>
-      <v-col cols="12">
-        <search-box
-          class="mt-2 mx-6"
-          v-model="query"
-          label="Search again"
-        ></search-box>
       </v-col>
       <v-col
         align-self="stretch"
@@ -39,18 +35,17 @@
 </template>
 
 <script>
-import SearchBox from "@/components/SearchBox.vue";
+import SearchForm from "@/components/SearchForm.vue";
 import HorizontalCard from "@/components/Recipe/RecipeCardHorizontal.vue";
 import response from "@/search-results";
 export default {
   components: {
-    SearchBox,
+    SearchForm,
     HorizontalCard
   },
   data() {
     return {
       initialQuery: "",
-      query: "",
       response
     };
   },
