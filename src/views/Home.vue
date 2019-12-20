@@ -37,7 +37,7 @@ import { config } from "@/plugins/api-config";
 import AppTitle from "@/components/common/AppTitle.vue";
 import AppBtn from "@/components/common/AppBtn.vue";
 import RecipesGrid from "@/components/RecipesGrid.vue";
-import SearchForm from "@/components/SearchForm.vue";
+import SearchForm from "@/components/common/search/SearchForm.vue";
 import { getRandomRecipes } from "@/api-utils/spoonacular-api";
 
 export default {

@@ -35,7 +35,7 @@
 </template>
 
 <script>
-import SearchForm from "@/components/SearchForm.vue";
+import SearchForm from "@/components/common/search/SearchForm.vue";
 import HorizontalCard from "@/components/Recipe/RecipeCardHorizontal.vue";
 import response from "@/fixtures/search-results";
 export default {
