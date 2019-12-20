@@ -29,7 +29,10 @@
         v-for="recipe in response.results"
         :key="recipe.id"
       >
-        <horizontal-card :recipe="recipe"></horizontal-card>
+        <horizontal-card
+          :recipe="recipe"
+          :baseImageUrl="baseImageUrl"
+        ></horizontal-card>
       </v-col>
     </v-row>
   </v-container>
@@ -50,6 +53,11 @@ export default {
       query: "",
       response
     };
+  },
+  computed: {
+    baseImageUrl() {
+      return response.baseUri;
+    }
   },
   mounted() {
     this.initialQuery = this.$route.query.query;

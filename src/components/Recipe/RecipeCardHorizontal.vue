@@ -34,10 +34,13 @@ export default {
   components: {
     AppBtn
   },
-  props: { recipe: Object },
+  props: {
+    recipe: Object,
+    baseImageUrl: String
+  },
   computed: {
     imageUrl() {
-      return "https://spoonacular.com/recipeImages/" + this.$props.recipe.image;
+      return this.baseImageUrl + this.recipe.image;
     }
   }
 };
