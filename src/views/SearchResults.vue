@@ -15,7 +15,11 @@
         </h4>
       </v-col>
       <v-col cols="12">
-        <search-box class="mt-2 mx-6"></search-box>
+        <search-box
+          class="mt-2 mx-6"
+          v-model="query"
+          label="Search using keywords"
+        ></search-box>
       </v-col>
       <v-col
         align-self="stretch"
@@ -42,7 +46,7 @@ export default {
   },
   data() {
     return {
-      query: "Pasta",
+      query: "",
       response
     };
   }

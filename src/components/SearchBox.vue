@@ -1,13 +1,12 @@
 <template>
   <v-text-field
-    color="secondary"
+    v-bind="$attrs"
     background-color="ingredients"
-    :label="label"
-    :autofocus="autofocus"
-    :height="height"
     rounded
     single-line
     filled
+    :value="val"
+    @input="$emit('input', (val = $event))"
   >
     <v-btn slot="append" color="secondary" class="mx-0" fab dark>
       <v-icon color="white" size="2.2em">search</v-icon>
@@ -17,7 +16,17 @@
 
 <script>
 export default {
-  props: ["label", "autofocus", "height"]
+  props: {
+    value: String
+  },
+  data() {
+    return {
+      val: ""
+    };
+  },
+  mounted() {
+    this.val = this.value;
+  }
 };
 </script>
 
