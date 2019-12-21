@@ -39,6 +39,7 @@ import AppBtn from "@/components/common/AppBtn.vue";
 import RecipesGrid from "@/components/RecipesGrid.vue";
 import SearchForm from "@/components/common/search/SearchForm.vue";
 import { getRandomRecipes } from "@/api-utils/spoonacular-api";
+import router from "@/router";
 
 export default {
   components: {
@@ -57,7 +58,7 @@ export default {
       getRandomRecipes({ number: 1 }, config).then(response => {
         const { data } = response;
         const id = data.recipes[0].id;
-        this.$router.push({ name: "recipe", params: { id } });
+        router.push({ name: "recipe", params: { id } });
       });
     }
   }
