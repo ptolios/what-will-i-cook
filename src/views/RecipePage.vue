@@ -33,14 +33,11 @@
 </template>
 
 <script>
+import { config } from "@/plugins/api-config";
 import { fetchRecipe } from "@/api-utils/spoonacular-api";
 import RecipeOverview from "@/components/Recipe/RecipeOverview.vue";
 import RecipeIngredients from "@/components/Recipe/RecipeIngredients.vue";
 import RecipeInstructions from "@/components/Recipe/RecipeInstructions.vue";
-
-const apiKey = process.env.VUE_APP_SPOONACULAR_API_KEY || "";
-const baseURL = process.env.VUE_APP_SPOONACULAR_API_URL || "";
-const config = { apiKey, baseURL };
 
 export default {
   components: {

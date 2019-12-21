@@ -35,9 +35,11 @@
 </template>
 
 <script>
-import SearchForm from "@/components/SearchForm.vue";
+import { config } from "@/plugins/api-config";
+import { searchRecipes } from "@/api-utils/spoonacular-api";
+import SearchForm from "@/components/common/search/SearchForm.vue";
 import HorizontalCard from "@/components/Recipe/RecipeCardHorizontal.vue";
-import response from "@/search-results";
+
 export default {
   components: {
     SearchForm,
@@ -45,17 +47,31 @@ export default {
   },
   data() {
     return {
+      loading: true,
+      error: false,
       initialQuery: "",
-      response
+      response: {},
+      baseImageUrl: ""
     };
   },
-  computed: {
-    baseImageUrl() {
-      return response.baseUri;
+  methods: {
+    getResponse() {
+      searchRecipes({ query: this.initialQuery }, config)
+        .then(response => {
+          const { data } = response;
+          this.response = data;
+          this.baseImageUrl = data.baseUri;
+          console.log(data);
+        })
+        .catch(error => {
+          this.loading = false;
+          this.error = error;
+        });
     }
   },
   mounted() {
     this.initialQuery = this.$route.query.query;
+    this.getResponse();
   }
 };
 </script>

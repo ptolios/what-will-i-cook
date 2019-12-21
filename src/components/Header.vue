@@ -26,7 +26,7 @@
 </template>
 
 <script>
-import AppTitle from "@/components/AppTitle.vue";
+import AppTitle from "@/components/common/AppTitle.vue";
 export default {
   components: {
     AppTitle

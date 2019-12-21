@@ -35,14 +35,9 @@
 </template>
 
 <script>
-// import dotenv from "dotenv";
+import { config } from "@/plugins/api-config";
 import { getRandomRecipes } from "@/api-utils/spoonacular-api";
 import RecipeCard from "@/components/RecipeCard.vue";
-// dotenv.config({ path: "../../" });
-
-const apiKey = process.env.VUE_APP_SPOONACULAR_API_KEY || "";
-const baseURL = process.env.VUE_APP_SPOONACULAR_API_URL || "";
-const config = { apiKey, baseURL };
 
 export default {
   components: {

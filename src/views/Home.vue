@@ -33,15 +33,12 @@
 </template>
 
 <script lang="ts">
-import AppTitle from "@/components/AppTitle.vue";
-import AppBtn from "@/components/AppBtn.vue";
+import { config } from "@/plugins/api-config";
+import AppTitle from "@/components/common/AppTitle.vue";
+import AppBtn from "@/components/common/AppBtn.vue";
 import RecipesGrid from "@/components/RecipesGrid.vue";
-import SearchForm from "@/components/SearchForm.vue";
+import SearchForm from "@/components/common/search/SearchForm.vue";
 import { getRandomRecipes } from "@/api-utils/spoonacular-api";
-
-const apiKey = process.env.VUE_APP_SPOONACULAR_API_KEY || "";
-const baseURL = process.env.VUE_APP_SPOONACULAR_API_URL || "";
-const config = { apiKey, baseURL };
 
 export default {
   components: {
