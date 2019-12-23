@@ -1,9 +1,6 @@
 <template>
   <v-form>
     <search-box @submitQuery="submited" :label="label" v-model="query" />
-    <router-link :to="{ path: '/search', query: { query: this.query } }">
-      Link
-    </router-link>
   </v-form>
 </template>
 
