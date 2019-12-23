@@ -22,18 +22,33 @@
           <span class="font-italic">{{ initialQuery }}</span>
         </h4>
       </v-col>
-      <v-col
-        align-self="stretch"
-        cols="6"
-        sm="4"
-        md="3"
-        v-for="recipe in response.results"
-        :key="recipe.id"
-      >
-        <horizontal-card
-          :recipe="recipe"
-          :baseImageUrl="baseImageUrl"
-        ></horizontal-card>
+      <v-col cols="12">
+        <v-row v-if="response.results.length">
+          <v-col
+            align-self="stretch"
+            cols="6"
+            sm="4"
+            md="3"
+            v-for="recipe in response.results"
+            :key="recipe.id"
+          >
+            <v-skeleton-loader
+              v-if="loading"
+              type="card"
+              transition="scale-transition"
+            />
+            <v-card v-else-if="error" class="primary">
+              Error: {{ error }}
+            </v-card>
+            <horizontal-card
+              :recipe="recipe"
+              :baseImageUrl="baseImageUrl"
+            ></horizontal-card>
+          </v-col>
+        </v-row>
+        <h3 v-else class="text-center">
+          Sorry, no results for {{ initialQuery }}...
+        </h3>
       </v-col>
     </v-row>
   </v-container>
@@ -63,6 +78,7 @@ export default {
     getResponse() {
       searchRecipes({ query: this.initialQuery, number: 12 }, config)
         .then(response => {
+          this.loading = false;
           const { data } = response;
           this.response = data;
           this.baseImageUrl = data.baseUri;

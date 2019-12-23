@@ -13,14 +13,7 @@
       </v-col>
     </v-row>
     <v-row class="d-flex" justify="center">
-      <v-progress-circular
-        v-if="loading"
-        indeterminate
-        color="secondary"
-      ></v-progress-circular>
-      <v-card v-else-if="error" class="primary">Error: {{ error }}</v-card>
       <v-col
-        v-else
         v-for="recipe in recipes"
         :key="recipe.id"
         class="pa-0"
@@ -28,7 +21,14 @@
         sm="6"
         md="3"
       >
-        <recipe-card :recipe="recipe" class="ma-2"></recipe-card>
+        <v-skeleton-loader
+          class="ma-2"
+          v-if="loading"
+          type="card"
+          transition="scale-transition"
+        />
+        <v-card v-else-if="error" class="primary">Error: {{ error }}</v-card>
+        <recipe-card v-else :recipe="recipe" class="ma-2"></recipe-card>
       </v-col>
     </v-row>
   </div>
