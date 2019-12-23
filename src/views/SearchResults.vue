@@ -30,7 +30,14 @@
         v-for="recipe in response.results"
         :key="recipe.id"
       >
+        <v-skeleton-loader
+          v-if="loading"
+          type="card"
+          transition="scale-transition"
+        />
+        <v-card v-else-if="error" class="primary">Error: {{ error }}</v-card>
         <horizontal-card
+          v-else
           :recipe="recipe"
           :baseImageUrl="baseImageUrl"
         ></horizontal-card>
@@ -63,6 +70,7 @@ export default {
     getResponse() {
       searchRecipes({ query: this.initialQuery, number: 12 }, config)
         .then(response => {
+          this.loading = false;
           const { data } = response;
           this.response = data;
           this.baseImageUrl = data.baseUri;
