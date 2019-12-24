@@ -1,14 +1,22 @@
 {
-  "name": "what-do-i-eat",
+  "name": "what-will-i-cook",
   "version": "0.1.0",
+  "author": {
+    "name": "Panos Tolios",
+    "email": "panostolios@gmail.com",
+    "url": "https://panostolios.dev"
+  },
+  "description": "A simple recipe finder web app",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "test:unit": "vue-cli-service test:unit",
+    "cypress:open": "cypress open",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "axios": "^0.19.0",
     "core-js": "^3.1.2",
     "vue": "^2.6.10",
     "vue-class-component": "^7.0.2",
@@ -17,6 +25,7 @@
     "vuetify": "^2.1.0"
   },
   "devDependencies": {
+    "@mdi/font": "^4.5.95",
     "@types/jest": "^24.0.11",
     "@vue/cli-plugin-babel": "^4.0.0",
     "@vue/cli-plugin-eslint": "^4.0.0",
@@ -27,6 +36,8 @@
     "@vue/eslint-config-prettier": "^5.0.0",
     "@vue/eslint-config-typescript": "^4.0.0",
     "@vue/test-utils": "1.0.0-beta.29",
+    "cypress": "^3.6.1",
+    "dotenv": "^8.2.0",
     "eslint": "^5.16.0",
     "eslint-plugin-prettier": "^3.1.0",
     "eslint-plugin-vue": "^5.0.0",

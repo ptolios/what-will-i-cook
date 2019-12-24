@@ -1,4 +1,21 @@
-# What Should I Eat?
+# What Will I Cook Today?
+
+## Description
+A simple recipe finder web app.
+
+## How to use the app
+
+### Searchbox
+Type keywords in the searchbox such as ingredients, cuisines, diets, meal types etc.
+
+### "Surprise Me!" button
+
+Press the "Surprise Me!" button to see a random recipe.
+
+## Project details
+The project is built with Vue.js, using the Vuetify framework.
+
+The data is retrieved from the Spoonacular API.
 
 ## Project setup
 ```
