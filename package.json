@@ -1,6 +1,12 @@
 {
-  "name": "what-do-i-eat",
+  "name": "what-will-i-cook",
   "version": "0.1.0",
+  "author": {
+    "name": "Panos Tolios",
+    "email": "panostolios@gmail.com",
+    "url": "https://panostolios.dev"
+  },
+  "description": "A simple recipe finder web app",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
