@@ -23,13 +23,13 @@
         </h4>
       </v-col>
       <v-col cols="12">
-        <v-row v-if="response.results.length">
+        <v-row v-if="results.length" align="stretch">
           <v-col
             align-self="stretch"
             cols="6"
             sm="4"
             md="3"
-            v-for="recipe in response.results"
+            v-for="recipe in results"
             :key="recipe.id"
           >
             <v-skeleton-loader
@@ -41,6 +41,9 @@
               Error: {{ error }}
             </v-card>
             <horizontal-card
+              v-else
+              height="100%"
+              class="mb-auto"
               :recipe="recipe"
               :baseImageUrl="baseImageUrl"
             ></horizontal-card>
@@ -50,6 +53,13 @@
           Sorry, no results for {{ initialQuery }}...
         </h3>
       </v-col>
+      <v-col cols="12">
+        <div class="d-flex justify-center">
+          <app-btn @btnclicked="loadMore" color="secondary">
+            See More...
+          </app-btn>
+        </div>
+      </v-col>
     </v-row>
   </v-container>
 </template>
@@ -57,11 +67,13 @@
 <script>
 import { config } from "@/plugins/api-config";
 import { searchRecipes } from "@/api-utils/spoonacular-api";
+import AppBtn from "@/components/common/AppBtn.vue";
 import SearchForm from "@/components/common/search/SearchForm.vue";
 import HorizontalCard from "@/components/Recipe/RecipeCardHorizontal.vue";
 
 export default {
   components: {
+    AppBtn,
     SearchForm,
     HorizontalCard
   },
@@ -70,17 +82,26 @@ export default {
       loading: true,
       error: false,
       initialQuery: "",
-      response: {},
-      baseImageUrl: ""
+      results: [],
+      baseImageUrl: "",
+      params: {
+        number: 12,
+        offset: 0
+      }
     };
   },
+  watch: {
+    initialQuery: function() {
+      this.getResponse(this.params);
+    }
+  },
   methods: {
-    getResponse() {
-      searchRecipes({ query: this.initialQuery, number: 12 }, config)
+    getResponse(params) {
+      searchRecipes({ query: this.initialQuery, ...params }, config)
         .then(response => {
           this.loading = false;
           const { data } = response;
-          this.response = data;
+          this.results.push(...data.results);
           this.baseImageUrl = data.baseUri;
         })
         .catch(error => {
@@ -90,14 +111,15 @@ export default {
     },
     goToResult(event) {
       this.initialQuery = event;
+    },
+    loadMore() {
+      this.params.offset += this.params.number;
+      this.getResponse(this.params);
     }
   },
   mounted() {
     this.initialQuery = this.$route.query.query;
-    this.getResponse();
-  },
-  updated() {
-    this.getResponse();
+    // this.getResponse(this.params);
   }
 };
 </script>
