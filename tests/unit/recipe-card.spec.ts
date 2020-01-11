@@ -1,5 +1,11 @@
+// Vuetify components were not being registered, so I found a workaround here:
+// https://github.com/vuetifyjs/vuetify/issues/243#issuecomment-288467099
+import Vue from "vue";
 import { shallowMount } from "@vue/test-utils";
+import Vuetify from "vuetify";
 import RecipeCard from "@/components/RecipeCard.vue";
+
+Vue.use(Vuetify);
 
 describe("RecipeCard.vue", () => {
   const recipeProps = {
