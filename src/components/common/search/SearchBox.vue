@@ -15,7 +15,7 @@
       fab
       dark
       type="submit"
-      @click.prevent="submtited"
+      @click.prevent="submitted"
     >
       <v-icon color="white" size="2.2em">search</v-icon>
     </v-btn>
