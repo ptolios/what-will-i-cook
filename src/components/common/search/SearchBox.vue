@@ -15,7 +15,7 @@
       fab
       dark
       type="submit"
-      @click.prevent="submited"
+      @click.prevent="submtited"
     >
       <v-icon color="white" size="2.2em">search</v-icon>
     </v-btn>
@@ -33,7 +33,7 @@ export default {
     };
   },
   methods: {
-    submited() {
+    submitted() {
       this.$emit("submitQuery", this.value);
     }
   },
