@@ -5,8 +5,7 @@
     rounded
     single-line
     filled
-    :value="val"
-    @input="$emit('input', (val = $event))"
+    v-model="query"
   >
     <v-btn
       slot="append"
@@ -24,21 +23,18 @@
 
 <script>
 export default {
-  props: {
-    value: String
-  },
+  // props: {
+  //   value: String
+  // },
   data() {
     return {
-      val: ""
+      query: ""
     };
   },
   methods: {
     submitted() {
-      this.$emit("submitQuery", this.value);
+      this.$emit("submitQuery", this.query);
     }
-  },
-  mounted() {
-    this.val = this.value;
   }
 };
 </script>

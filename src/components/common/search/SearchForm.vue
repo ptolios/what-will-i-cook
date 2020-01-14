@@ -20,7 +20,7 @@ export default {
   },
   methods: {
     submited(event) {
-      this.$emit("submitQuery", this.query);
+      this.$emit("submitQuery", event);
       this.$router.push({ path: "/search", query: { query: event } });
     }
   }

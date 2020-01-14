@@ -92,6 +92,9 @@ export default {
   },
   watch: {
     initialQuery: function() {
+      // if query changes reset results & offset
+      this.results = [];
+      this.params.offset = 0;
       this.getResponse(this.params);
     }
   },
@@ -119,7 +122,6 @@ export default {
   },
   mounted() {
     this.initialQuery = this.$route.query.query;
-    // this.getResponse(this.params);
   }
 };
 </script>
