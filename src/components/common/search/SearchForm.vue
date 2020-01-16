@@ -1,6 +1,11 @@
 <template>
-  <v-form>
-    <search-box @submitQuery="submited" :label="label" v-model="query" />
+  <v-form data-test="searchform">
+    <search-box
+      @submitQuery="submitted"
+      :label="label"
+      v-model="query"
+      data-test="searchbox"
+    />
   </v-form>
 </template>
 
@@ -19,7 +24,7 @@ export default {
     };
   },
   methods: {
-    submited(event) {
+    submitted(event) {
       this.$emit("submitQuery", event);
       this.$router.push({ path: "/search", query: { query: event } });
     }

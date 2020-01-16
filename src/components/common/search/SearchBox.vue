@@ -6,6 +6,7 @@
     single-line
     filled
     v-model="query"
+    data-test="textfield"
   >
     <v-btn
       slot="append"
@@ -15,6 +16,7 @@
       dark
       type="submit"
       @click.prevent="submitted"
+      data-test="searchbox-btn"
     >
       <v-icon color="white" size="2.2em">search</v-icon>
     </v-btn>
@@ -23,9 +25,6 @@
 
 <script>
 export default {
-  // props: {
-  //   value: String
-  // },
   data() {
     return {
       query: ""
@@ -33,7 +32,9 @@ export default {
   },
   methods: {
     submitted() {
-      this.$emit("submitQuery", this.query);
+      // remove excess whitespace from quey string
+      const payload = this.query.replace(/\s+/g, ' ').trim()
+      this.$emit("submitQuery", payload);
     }
   }
 };
