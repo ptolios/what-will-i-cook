@@ -3,7 +3,7 @@
 // read this setup/startup file.
 //
 
-import Vue from 'vue';
+import Vue from "vue"
 
 // DON'T DO THIS or you'll have problems like <v-btn :to="..."> rendering
 // as <router-link> instead of <a href="..."> on the unit tests.

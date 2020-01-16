@@ -33,7 +33,7 @@ describe("RecipeCard.vue", () => {
     expect(recipeCardComponent.props("recipe").readyInMinutes).toEqual(
       recipeProps.readyInMinutes
     );
-  });
+  })
 
   it("renders the correct HTML nodes", () => {});
-});
+})

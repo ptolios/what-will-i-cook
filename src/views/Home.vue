@@ -59,7 +59,7 @@ export default {
         const { data } = response;
         const id = data.recipes[0].id;
         router.push({ name: "recipe", params: { id } });
-      });
+      })
     }
   }
 };

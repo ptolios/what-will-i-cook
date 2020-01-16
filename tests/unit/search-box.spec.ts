@@ -14,12 +14,11 @@ describe("SearchBox", () => {
 
   let SearchBoxComponent = mount(SearchBox)
 
- 
   it("sets the correct data", () => {
     const input = SearchBoxComponent.find("[data-test='textfield']");
     input.setValue(inputText1);
     expect(SearchBoxComponent.vm.$data.query).toBe(inputText1)
-  })
+  });
   it("emits the correct payload", () => {
     SearchBoxComponent.vm.$emit("submitQuery", inputText1);
     expect(SearchBoxComponent.emitted().submitQuery).toBeTruthy();
@@ -31,8 +30,8 @@ describe("SearchBox", () => {
     SearchBoxComponent.find("[data-test='searchbox-btn']").trigger("click");
     expect(SearchBoxComponent.emitted().submitQuery).toBeTruthy();
     expect(SearchBoxComponent.emitted().submitQuery).toHaveLength(2);
-    expect(SearchBoxComponent.emitted()
-      .submitQuery[1])
-      .toEqual([inputText2.replace(/\s+/g, ' ').trim()]);
+    expect(SearchBoxComponent.emitted().submitQuery[1]).toEqual([
+      inputText2.replace(/\s+/g, " ").trim()
+    ]);
   })
-})
+});

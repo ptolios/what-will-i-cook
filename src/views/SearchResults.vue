@@ -110,7 +110,7 @@ export default {
         .catch(error => {
           this.loading = false;
           this.error = error;
-        });
+        })
     },
     goToResult(event) {
       this.initialQuery = event;

@@ -29,21 +29,21 @@ describe("fetchRecipe({id: 210685})", () => {
   fetchRecipe(params, config).then(response => {
     const { data, staus } = response;
     const apiResponse = response;
-  });
+  })
 
   it("should return status code 200", done => {
     if (apiResponse) {
       expect(status).toBe(200);
     }
     done();
-  });
+  })
 
   it("should return data with id = 210685", done => {
     if (apiResponse) {
       expect(data.id).toBe(210685);
     }
     done();
-  });
+  })
 });
 
 describe("fetchRecipe({id: 4588573)", () => {
@@ -56,14 +56,14 @@ describe("fetchRecipe({id: 4588573)", () => {
   fetchRecipe(params, config).then(error => {
     const { data } = error;
     const errorResponse = error;
-  });
+  })
 
   it("should return status code 404", done => {
     if (errorResponse) {
       expect(data.code).toBe(404);
     }
     done();
-  });
+  })
 });
 
 describe("searchRecipes({query: 'burger', number: 2})", () => {
@@ -78,21 +78,21 @@ describe("searchRecipes({query: 'burger', number: 2})", () => {
     // extract variables from response
     const { data, status } = response;
     const apiResponse = response;
-  });
+  })
 
   it("should return status code 200", done => {
     if (apiResponse) {
       expect(status).toBe(200);
     }
     done();
-  });
+  })
 
   it("should return exactly 2 recipes", done => {
     if (apiResponse) {
       expect(data.results).toHaveLength(2);
     }
     done();
-  });
+  })
 
   it("should return an object with specific indexes", done => {
     if (apiResponse) {
@@ -103,7 +103,7 @@ describe("searchRecipes({query: 'burger', number: 2})", () => {
       expect(data.results.keys()).toContain("readyInMinutes");
     }
     done();
-  });
+  })
 });
 
 describe("getRandomRecipes({number: 5})", () => {
@@ -117,19 +117,19 @@ describe("getRandomRecipes({number: 5})", () => {
     // extract variables from response
     const { data, status } = response;
     const apiResponse = response;
-  });
+  })
 
   it("should return status code 200", done => {
     if (apiResponse) {
       expect(status).toBe(200);
     }
     done();
-  });
+  })
 
   it("should return 5 random recipes", done => {
     if (apiResponse) {
       expect(data.recipes).toHaveLength(5);
     }
     done();
-  });
+  })
 });

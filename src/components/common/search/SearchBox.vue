@@ -33,7 +33,7 @@ export default {
   methods: {
     submitted() {
       // remove excess whitespace from quey string
-      const payload = this.query.replace(/\s+/g, ' ').trim()
+      const payload = this.query.replace(/\s+/g, " ").trim()
       this.$emit("submitQuery", payload);
     }
   }
