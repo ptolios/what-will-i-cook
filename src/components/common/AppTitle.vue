@@ -1,7 +1,7 @@
 <template>
-  <p style="font-family: Pacifico, cursive !important;">
+  <div style="font-family: Pacifico, cursive !important;">
     <slot></slot>
-  </p>
+  </div>
 </template>
 
 <script>
