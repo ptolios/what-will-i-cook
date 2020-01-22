@@ -24,6 +24,18 @@ export default Vue.extend({
     return {
       invertedScroll: false
     };
+  },
+  methods: {
+    manageHeaderVisibility() {
+      this.invertedScroll = this.$route.path == "/" ? true : false;
+    }
+  },
+  // Control Header visibility
+  updated() {
+    this.manageHeaderVisibility();
+  },
+  created() {
+    this.manageHeaderVisibility();
   }
 });
 </script>
