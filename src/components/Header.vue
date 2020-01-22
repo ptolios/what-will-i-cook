@@ -3,8 +3,8 @@
     <v-app-bar-nav-icon color="primary"></v-app-bar-nav-icon>
     <v-spacer />
     <app-title class="ma-auto">
-      <h3 class="primary--text align-self-stretch">
-        What will I cook today?
+      <h3 class="primary--text align-self-stretch text-truncate">
+        <a href="/">What will I cook today?</a>
       </h3>
     </app-title>
     <v-spacer />
@@ -35,4 +35,8 @@ export default {
 };
 </script>
 
-<style scoped></style>
+<style scoped>
+a {
+  text-decoration: none;
+}
+</style>
