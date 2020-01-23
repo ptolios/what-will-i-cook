@@ -12,18 +12,20 @@
         <h1 style="font-family: Pacifico, cursive !important;">How about...</h1>
       </v-col>
     </v-row>
-    <v-row class="d-flex" justify="center">
+    <v-row class="d-flex" justify="space-around">
       <v-col
         v-for="recipe in recipes"
         :key="recipe.id"
-        class="pa-0"
+        class="d-flex"
+        align-self="stretch"
         cols="8"
-        sm="6"
-        md="3"
+        sm="4"
+        md="4"
+        lg="3"
       >
         <v-skeleton-loader
-          class="ma-2"
           v-if="loading"
+          class="ma-2"
           type="card"
           transition="scale-transition"
         />
@@ -51,7 +53,7 @@ export default {
     };
   },
   mounted() {
-    getRandomRecipes({ number: 5 }, config)
+    getRandomRecipes({ number: 12 }, config)
       .then(response => {
         const { data } = response;
         this.recipes = data.recipes;
@@ -60,7 +62,7 @@ export default {
       .catch(error => {
         this.loading = false;
         this.error = error;
-      })
+      });
   }
 };
 </script>
