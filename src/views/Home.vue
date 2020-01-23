@@ -48,7 +48,9 @@
         </div>
       </div>
     </v-container>
-    <recipes-grid ref="recipes"></recipes-grid>
+    <v-container>
+      <recipes-grid ref="recipes"></recipes-grid>
+    </v-container>
   </div>
 </template>
 
