@@ -45,11 +45,12 @@
               >
             </div>
           </div>
+          <down-arrow :target="'#recipes'" :options="options" />
         </div>
       </div>
     </v-container>
     <v-container>
-      <recipes-grid ref="recipes"></recipes-grid>
+      <recipes-grid id="recipes"></recipes-grid>
     </v-container>
   </div>
 </template>
@@ -58,6 +59,7 @@
 import { config } from "@/plugins/api-config";
 import AppTitle from "@/components/common/AppTitle.vue";
 import AppBtn from "@/components/common/AppBtn.vue";
+import DownArrow from "@/components/common/DownArrow.vue";
 import RecipesGrid from "@/components/RecipesGrid.vue";
 import SearchForm from "@/components/common/search/SearchForm.vue";
 import { getRandomRecipes } from "@/api-utils/spoonacular-api";
@@ -67,12 +69,16 @@ export default {
   components: {
     AppTitle,
     AppBtn,
+    DownArrow,
     RecipesGrid,
     SearchForm
   },
   data() {
     return {
-      //
+      options: {
+        offset: 56,
+        duration: 800
+      }
     };
   },
   methods: {
