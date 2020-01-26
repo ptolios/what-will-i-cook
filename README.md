@@ -1,5 +1,5 @@
 # What Will I Cook Today?
-
+[![Netlify Status](https://api.netlify.com/api/v1/badges/7409ce35-13d2-4c3d-a096-9e5634bba3c9/deploy-status)](https://app.netlify.com/sites/what-will-i-cook-today/deploys)
 ## Description
 A simple recipe finder web app.
 
