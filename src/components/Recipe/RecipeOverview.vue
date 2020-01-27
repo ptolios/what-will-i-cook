@@ -1,23 +1,30 @@
 <template>
   <v-card color="primary" dark>
-    <v-card-title class="title text-center font-weight-black mx-4">
-      <slot name="title"></slot>
-    </v-card-title>
-    <div class="d-flex justify-space-around py-2">
+    <div class="d-flex flex-column flex-sm-row">
       <div
-        v-for="(sign, index) in signs"
-        :key="index"
-        class="d-flex flex-column align-center"
+        class="recipe-info d-flex flex-column justify-space-around"
+        :style="divMaxWidth"
       >
-        <div class="caption">{{ sign.title }}</div>
-        <v-icon class="py-1">{{ sign.icon }}</v-icon>
-        <div class="body-2">
-          <slot :name="sign.slotName"></slot>
-          {{ sign.extraText }}
+        <v-card-title class="title text-center font-weight-black mx-4">
+          <slot name="title"></slot>
+        </v-card-title>
+        <div class="d-flex justify-space-around py-2">
+          <div
+            v-for="(sign, index) in signs"
+            :key="index"
+            class="d-flex flex-column align-center"
+          >
+            <div class="caption">{{ sign.title }}</div>
+            <v-icon class="py-1">{{ sign.icon }}</v-icon>
+            <div class="body-2">
+              <slot :name="sign.slotName"></slot>
+              {{ sign.extraText }}
+            </div>
+          </div>
         </div>
       </div>
+      <v-img :src="imageUrl" />
     </div>
-    <v-img :src="imageUrl"></v-img>
   </v-card>
 </template>
 
@@ -47,8 +54,22 @@ export default {
         }
       ]
     };
+  },
+  computed: {
+    divMaxWidth() {
+      switch (this.$vuetify.breakpoint.name) {
+        case "xs":
+          return "";
+      }
+      // else
+      return "max-width: 35%;";
+    }
   }
 };
 </script>
 
-<style></style>
+<style scoped>
+.recipe-info {
+  min-width: 230px;
+}
+</style>
