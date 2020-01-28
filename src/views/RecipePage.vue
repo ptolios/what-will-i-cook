@@ -1,5 +1,5 @@
 <template>
-  <v-container>
+  <v-container :style="narrowContainer">
     <v-row v-if="loading">
       <v-progress-circular
         indeterminate
@@ -61,6 +61,20 @@ export default {
     },
     instructions() {
       return this.recipe.analyzedInstructions[0].steps;
+    },
+    narrowContainer() {
+      switch (this.$vuetify.breakpoint.name) {
+        case "xs":
+          return "";
+        case "sm":
+          return "max-width: 80%";
+        case "md":
+          return "max-width: 70%";
+        case "lg":
+          return "max-width: 60%";
+      }
+      // else
+      return "max-width: 50%;";
     }
   },
   mounted() {
@@ -74,7 +88,7 @@ export default {
       .catch(error => {
         this.loading = false;
         this.error = error;
-      })
+      });
   }
 };
 </script>
