@@ -72,4 +72,8 @@ export default {
 .recipe-info {
   min-width: 230px;
 }
+
+.v-responsive {
+  flex: 1 1 auto;
+}
 </style>
