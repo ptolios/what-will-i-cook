@@ -7,7 +7,7 @@
     </div>
     <v-list-item-group>
       <v-container class="pa-0">
-        <v-row>
+        <v-row class="align-end">
           <v-col
             class="pa-1"
             cols="12"
