@@ -1,12 +1,9 @@
 <template>
   <v-card color="primary" dark>
     <v-img :src="imageUrl" aspect-ratio="1">
-      <v-chip class="mt-2 ml-2" color="primary" small>
-        <v-icon class small>timer</v-icon>
-        <span class="font-weight-bold px-1"
-          >{{ recipe.readyInMinutes }} min</span
-        >
-      </v-chip>
+      <preptime-chip color="primary" small>
+        {{ recipe.readyInMinutes }}
+      </preptime-chip>
     </v-img>
     <div class="d-flex flex-column">
       <v-card-title
@@ -30,9 +27,11 @@
 
 <script>
 import AppBtn from "@/components/common/AppBtn.vue";
+import PreptimeChip from "@/components/common/PreptimeChip.vue";
 export default {
   components: {
-    AppBtn
+    AppBtn,
+    PreptimeChip
   },
   props: {
     recipe: Object,

@@ -1,12 +1,9 @@
 <template>
   <v-card :href="'/recipe/' + recipe.id" color="primary" dark>
     <v-img :src="recipe.image">
-      <v-chip class="mt-2 ml-2" color="primary">
-        <v-icon class>timer</v-icon>
-        <span class="font-weight-bold px-1"
-          >{{ recipe.readyInMinutes }} min</span
-        >
-      </v-chip>
+      <preptime-chip color="primary">
+        {{ recipe.readyInMinutes }}
+      </preptime-chip>
     </v-img>
     <v-card-title
       class="subtitle-1 text-center font-weight-black"
@@ -18,7 +15,9 @@
 </template>
 
 <script>
+import PreptimeChip from "@/components/common/PreptimeChip.vue";
 export default {
+  components: { PreptimeChip },
   props: { recipe: Object }
 };
 </script>
