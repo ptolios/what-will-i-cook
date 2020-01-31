@@ -18,7 +18,6 @@ export default {
     if ("small" in this.$attrs) {
       this.small = this.$attrs["small"];
     }
-    console.log(this.$attrs);
   }
 };
 </script>
