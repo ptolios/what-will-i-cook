@@ -1,16 +1,17 @@
-// import Vue from "vue"
+import Vue from "vue"
 import { shallowMount, createLocalVue } from "@vue/test-utils"
 import VueRouter from "vue-router"
 import Vuetify from "vuetify"
 import SearchForm from "@/components/common/search/SearchForm.vue"
 
+Vue.config.silent = true
 const localVue = createLocalVue()
 
 describe("SearchForm", () => {
   const label: String = "Search by ingredient, cuisine, meal type etc."
   const inputText = "Eggs salad mexican"
 
-  localVue.use(Vuetify)
+  // localVue.use(Vuetify)
   localVue.use(VueRouter)
 
   const routes = [{ path: "/search", name: "search" }]
