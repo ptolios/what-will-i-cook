@@ -1,6 +1,6 @@
 <template>
   <v-list class="px-3 mt-4" disabled dense>
-    <div class="d-flex justify-center py-6">
+    <div class="d-flex justify-center justify-md-start py-6">
       <v-subheader class="title primary--text font-weight-black ml-4">
         Instructions
       </v-subheader>
