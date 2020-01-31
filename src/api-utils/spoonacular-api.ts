@@ -28,6 +28,11 @@ interface RandomRecipesParams {
   tags?: string;
 }
 
+interface SimilarRecipesParams {
+  id: number;
+  number: number;
+}
+
 const searchRecipes = async (params: SearchParams, config: Config) => {
   const { apiKey, baseURL } = config;
   const URL = baseURL + "/search";
@@ -74,12 +79,31 @@ const getRandomRecipes = async (
   }
 };
 
+const getSimilarRecipes = async (
+  params: SimilarRecipesParams,
+  config: Config
+) => {
+  const { apiKey, baseURL } = config;
+  const { id, number } = params;
+  const URL = baseURL + id + "/similar";
+  try {
+    const response = await axios.get(URL, {
+      params: { apiKey, ...params }
+    });
+    return response;
+  } catch (error) {
+    return error;
+  }
+};
+
 export {
   fetchRecipe,
   searchRecipes,
   getRandomRecipes,
+  getSimilarRecipes,
   Config,
   SearchParams,
   RecipeParams,
-  RandomRecipesParams
+  RandomRecipesParams,
+  SimilarRecipesParams
 };

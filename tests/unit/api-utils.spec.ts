@@ -2,10 +2,12 @@ import {
   fetchRecipe,
   searchRecipes,
   getRandomRecipes,
+  getSimilarRecipes,
   Config,
   SearchParams,
   RecipeParams,
-  RandomRecipesParams
+  RandomRecipesParams,
+  SimilarRecipesParams
 } from "@/api-utils/spoonacular-api";
 import dotenv from "dotenv";
 
@@ -133,3 +135,33 @@ describe("getRandomRecipes({number: 5})", () => {
     done();
   })
 });
+
+describe("getSimilarRecipes({id: 210685, number: 5})", () => {
+  const params: SimilarRecipesParams = {
+    id: 210685,
+    number: 5
+  };
+
+  let data: any, status: string, apiResponse: any;
+
+  getSimilarRecipes(params, config).then(response => {
+    // extract variables from response
+    const { data, status } = response;
+    const apiResponse = response;
+  })
+
+  it("should return status code 200", done => {
+    if (apiResponse) {
+      expect(status).toBe(200);
+    }
+    done();
+  })
+
+  it("should return 5 similar recipes", done => {
+    if (apiResponse) {
+      expect(data.recipes).toHaveLength(5);
+    }
+    done();
+  })
+
+})
