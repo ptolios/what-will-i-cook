@@ -129,7 +129,8 @@ export default {
           this.similarRecipes = response.data;
         })
         .catch(error => {
-          console.log(error);
+          this.loading = false;
+          this.error = error;
         });
     });
   }
