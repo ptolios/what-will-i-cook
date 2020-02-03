@@ -35,13 +35,8 @@ describe("SimilarRecipe", () => {
   })
   
   it("renders the correct title", () => {
-    const renderedTitle = wrapper.find("v-card-title");
+    const renderedTitle = wrapper.find("v-card-subtitle");
     expect(renderedTitle.text()).toBe(title);
-  })
-  
-  it("renders the correct preparation time", () => {
-    const prepTime = wrapper.find("preptime-chip");
-    expect(prepTime.text()).toBe(readyInMinutes);
   })
 
 });
