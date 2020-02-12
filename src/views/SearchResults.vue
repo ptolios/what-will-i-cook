@@ -25,6 +25,7 @@
       <v-col cols="12">
         <v-row v-if="results.length" align="stretch">
           <v-col
+            class="d-flex justify-end"
             align-self="stretch"
             cols="6"
             sm="4"
@@ -42,10 +43,9 @@
             </v-card>
             <horizontal-card
               v-else
-              height="100%"
-              class="mb-auto"
               :recipe="recipe"
               :baseImageUrl="baseImageUrl"
+              class="flex-grow-1"
             ></horizontal-card>
           </v-col>
         </v-row>
