@@ -5,7 +5,7 @@
         {{ recipe.readyInMinutes }}
       </preptime-chip>
     </v-img>
-    <div class="d-flex flex-column">
+    <div class="d-flex flex-column align-center">
       <v-card-title
         class="subtitle-1 text-center font-weight-black my-2 py-0"
         style="font-family: Poppins !important;"
