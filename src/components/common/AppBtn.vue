@@ -23,17 +23,17 @@ export default {
   data() {
     return {
       btnClass: ""
-    };
+    }
   },
   mounted: function() {
     if (this.$props.color === "primary") {
-      this.btnClass = "btn-class-primary";
+      this.btnClass = "btn-class-primary"
     }
     if (this.$props.color === "secondary") {
-      this.btnClass = "btn-class-secondary";
+      this.btnClass = "btn-class-secondary"
     }
   }
-};
+}
 </script>
 
 <style scoped>

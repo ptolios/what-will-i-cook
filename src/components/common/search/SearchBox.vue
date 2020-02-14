@@ -28,16 +28,16 @@ export default {
   data() {
     return {
       query: ""
-    };
+    }
   },
   methods: {
     submitted() {
       // remove excess whitespace from quey string
-      const payload = this.query.replace(/\s+/g, " ").trim();
-      this.$emit("submitQuery", payload);
+      const payload = this.query.replace(/\s+/g, " ").trim()
+      this.$emit("submitQuery", payload)
     }
   }
-};
+}
 </script>
 
 <style scoped>

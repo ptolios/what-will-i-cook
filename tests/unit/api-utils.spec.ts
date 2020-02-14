@@ -8,143 +8,139 @@ import {
   RecipeParams,
   RandomRecipesParams,
   SimilarRecipesParams
-} from "@/api-utils/spoonacular-api";
-import dotenv from "dotenv";
+} from "@/api-utils/spoonacular-api"
+import dotenv from "dotenv"
 
-dotenv.config({ path: "../" });
+dotenv.config({ path: "../" })
 
-const apiKey: string = process.env.VUE_APP_SPOONACULAR_API_KEY || "";
-const baseURL: string = process.env.VUE_APP_SPOONACULAR_API_URL || "";
+const apiKey: string = process.env.VUE_APP_SPOONACULAR_API_KEY || ""
+const baseURL: string = process.env.VUE_APP_SPOONACULAR_API_URL || ""
 
 let config: Config = {
   apiKey,
   baseURL
-};
+}
 
 describe("fetchRecipe({id: 210685})", () => {
   const params: RecipeParams = {
     id: 210685
-  };
+  }
 
-  let data: any, status: any, apiResponse: any;
+  let data: any, status: any, apiResponse: any
 
   fetchRecipe(params, config).then(response => {
-    const { data, staus } = response;
-    const apiResponse = response;
+    const { data, staus } = response
+    const apiResponse = response
   })
 
   it("should return status code 200", done => {
     if (apiResponse) {
-      expect(status).toBe(200);
+      expect(status).toBe(200)
     }
-    done();
+    done()
   })
 
   it("should return data with id = 210685", done => {
     if (apiResponse) {
-      expect(data.id).toBe(210685);
+      expect(data.id).toBe(210685)
     }
-    done();
+    done()
   })
-});
+})
 
 describe("fetchRecipe({id: 4588573)", () => {
   const params: RecipeParams = {
     id: 4588573
-  };
+  }
 
-  let data: any, errorResponse: any;
+  let data: any, errorResponse: any
 
   fetchRecipe(params, config).then(error => {
-    const { data } = error;
-    const errorResponse = error;
+    const { data } = error
+    const errorResponse = error
   })
 
   it("should return status code 404", done => {
     if (errorResponse) {
-      expect(data.code).toBe(404);
+      expect(data.code).toBe(404)
     }
-    done();
+    done()
   })
-});
+})
 
 describe("searchRecipes({query: 'burger', number: 2})", () => {
   const params: SearchParams = {
     query: "burger",
     number: 2
-  };
+  }
 
-  let data: any, status: string, apiResponse: any;
+  let data: any, status: string, apiResponse: any
 
   searchRecipes(params, config).then(response => {
     // extract variables from response
-    const { data, status } = response;
-    const apiResponse = response;
+    const { data, status } = response
+    const apiResponse = response
   })
 
   it("should return status code 200", done => {
     if (apiResponse) {
-      expect(status).toBe(200);
+      expect(status).toBe(200)
     }
-    done();
+    done()
   })
 
   it("should return exactly 2 recipes", done => {
     if (apiResponse) {
-      expect(data.results).toHaveLength(2);
+      expect(data.results).toHaveLength(2)
     }
-    done();
+    done()
   })
 
   it("should return an object with specific indexes", done => {
     if (apiResponse) {
-      expect(data.results.keys()).toContain("id");
-      expect(data.results.keys()).toContain("title");
-      expect(data.results.keys()).toContain("image");
-      expect(data.results.keys()).toContain("servings");
-      expect(data.results.keys()).toContain("readyInMinutes");
+      expect(data.results.keys()).toContain("id")
+      expect(data.results.keys()).toContain("title")
+      expect(data.results.keys()).toContain("image")
+      expect(data.results.keys()).toContain("servings")
+      expect(data.results.keys()).toContain("readyInMinutes")
     }
-    done();
+    done()
   })
-});
+})
 
 describe("getRandomRecipes({number: 5})", () => {
   const params: RandomRecipesParams = {
     number: 5
-  };
+  }
 
   it("should return status code 200", () => {
-    return getRandomRecipes(params, config)
-      .then(response => {
-        expect(response.status).toBe(200);
-      })
+    return getRandomRecipes(params, config).then(response => {
+      expect(response.status).toBe(200)
+    })
   })
 
   it("should return 5 random recipes", () => {
-    return getRandomRecipes(params, config)
-      .then(response => {
-        expect(response.data.recipes).toHaveLength(5)
-      })
+    return getRandomRecipes(params, config).then(response => {
+      expect(response.data.recipes).toHaveLength(5)
+    })
   })
-});
+})
 
 describe("getSimilarRecipes({id: 210685, number: 5})", () => {
   const params: SimilarRecipesParams = {
     id: 210685,
     number: 5
-  };
+  }
 
   it("should return status code 200", () => {
-    return getSimilarRecipes(params, config)
-      .then(response => {
-        expect(response.status).toBe(200);
-      })
+    return getSimilarRecipes(params, config).then(response => {
+      expect(response.status).toBe(200)
+    })
   })
 
   it("should return 5 similar recipes", () => {
-    return getSimilarRecipes(params, config)
-      .then(response => {
-        expect(response.data).toHaveLength(5);
-      })
+    return getSimilarRecipes(params, config).then(response => {
+      expect(response.data).toHaveLength(5)
+    })
   })
 })

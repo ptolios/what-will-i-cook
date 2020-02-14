@@ -53,19 +53,19 @@ export default {
           extraText: ""
         }
       ]
-    };
+    }
   },
   computed: {
     divMaxWidth() {
       switch (this.$vuetify.breakpoint.name) {
         case "xs":
-          return "";
+          return ""
       }
       // else
-      return "max-width: 35%;";
+      return "max-width: 35%;"
     }
   }
-};
+}
 </script>
 
 <style scoped>

@@ -65,11 +65,11 @@
 </template>
 
 <script>
-import { config } from "@/plugins/api-config";
-import { searchRecipes } from "@/api-utils/spoonacular-api";
-import AppBtn from "@/components/common/AppBtn.vue";
-import SearchForm from "@/components/common/search/SearchForm.vue";
-import HorizontalCard from "@/components/Recipe/RecipeCardHorizontal.vue";
+import { config } from "@/plugins/api-config"
+import { searchRecipes } from "@/api-utils/spoonacular-api"
+import AppBtn from "@/components/common/AppBtn.vue"
+import SearchForm from "@/components/common/search/SearchForm.vue"
+import HorizontalCard from "@/components/Recipe/RecipeCardHorizontal.vue"
 
 export default {
   components: {
@@ -88,42 +88,42 @@ export default {
         number: 12,
         offset: 0
       }
-    };
+    }
   },
   watch: {
     initialQuery: function() {
       // if query changes reset results & offset
-      this.results = [];
-      this.params.offset = 0;
-      this.getResponse(this.params);
+      this.results = []
+      this.params.offset = 0
+      this.getResponse(this.params)
     }
   },
   methods: {
     getResponse(params) {
       searchRecipes({ query: this.initialQuery, ...params }, config)
         .then(response => {
-          this.loading = false;
-          const { data } = response;
-          this.results.push(...data.results);
-          this.baseImageUrl = data.baseUri;
+          this.loading = false
+          const { data } = response
+          this.results.push(...data.results)
+          this.baseImageUrl = data.baseUri
         })
         .catch(error => {
-          this.loading = false;
-          this.error = error;
-        });
+          this.loading = false
+          this.error = error
+        })
     },
     goToResult(event) {
-      this.initialQuery = event;
+      this.initialQuery = event
     },
     loadMore() {
-      this.params.offset += this.params.number;
-      this.getResponse(this.params);
+      this.params.offset += this.params.number
+      this.getResponse(this.params)
     }
   },
   mounted() {
-    this.initialQuery = this.$route.query.query;
+    this.initialQuery = this.$route.query.query
   }
-};
+}
 </script>
 
 <style></style>

@@ -37,9 +37,9 @@
 </template>
 
 <script>
-import { config } from "@/plugins/api-config";
-import { getRandomRecipes } from "@/api-utils/spoonacular-api";
-import RecipeCard from "@/components/RecipeCard.vue";
+import { config } from "@/plugins/api-config"
+import { getRandomRecipes } from "@/api-utils/spoonacular-api"
+import RecipeCard from "@/components/RecipeCard.vue"
 
 export default {
   components: {
@@ -50,21 +50,21 @@ export default {
       loading: true,
       error: false,
       recipes: {}
-    };
+    }
   },
   mounted() {
     getRandomRecipes({ number: 12 }, config)
       .then(response => {
-        const { data } = response;
-        this.recipes = data.recipes;
-        this.loading = false;
+        const { data } = response
+        this.recipes = data.recipes
+        this.loading = false
       })
       .catch(error => {
-        this.loading = false;
-        this.error = error;
-      });
+        this.loading = false
+        this.error = error
+      })
   }
-};
+}
 </script>
 
 <style scoped>

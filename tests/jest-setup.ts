@@ -16,4 +16,4 @@ import Vue from "vue"
 //import 'babel-polyfill';
 
 // So we don't see unnecessary Vue warnings about production.
-Vue.config.productionTip = false;
+Vue.config.productionTip = false

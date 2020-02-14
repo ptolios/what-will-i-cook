@@ -88,5 +88,5 @@ const response = {
   processingTimeMs: 224,
   expires: 1574003642243,
   isStale: false
-};
-export default response;
+}
+export default response

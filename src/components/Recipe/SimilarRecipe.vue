@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import PreptimeChip from "@/components/common/PreptimeChip.vue";
+import PreptimeChip from "@/components/common/PreptimeChip.vue"
 export default {
   components: {
     PreptimeChip
@@ -27,7 +27,7 @@ export default {
     imageUrl: String,
     readyInMinutes: Number
   }
-};
+}
 </script>
 
 <style></style>

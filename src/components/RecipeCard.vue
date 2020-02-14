@@ -15,11 +15,11 @@
 </template>
 
 <script>
-import PreptimeChip from "@/components/common/PreptimeChip.vue";
+import PreptimeChip from "@/components/common/PreptimeChip.vue"
 export default {
   components: { PreptimeChip },
   props: { recipe: Object }
-};
+}
 </script>
 <style>
 .v-card__title {

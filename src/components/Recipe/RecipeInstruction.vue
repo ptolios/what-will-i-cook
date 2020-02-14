@@ -14,7 +14,7 @@
 <script>
 export default {
   props: ["instruction"]
-};
+}
 </script>
 
 <style scoped>

@@ -26,8 +26,8 @@
 </template>
 
 <script>
-import AppBtn from "@/components/common/AppBtn.vue";
-import PreptimeChip from "@/components/common/PreptimeChip.vue";
+import AppBtn from "@/components/common/AppBtn.vue"
+import PreptimeChip from "@/components/common/PreptimeChip.vue"
 export default {
   components: {
     AppBtn,
@@ -39,10 +39,10 @@ export default {
   },
   computed: {
     imageUrl() {
-      return this.baseImageUrl + this.recipe.image;
+      return this.baseImageUrl + this.recipe.image
     }
   }
-};
+}
 </script>
 <style scoped>
 .container {

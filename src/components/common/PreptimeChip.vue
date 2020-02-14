@@ -12,12 +12,12 @@ export default {
   data() {
     return {
       small: false
-    };
+    }
   },
   mounted() {
     if ("small" in this.$attrs) {
-      this.small = this.$attrs["small"];
+      this.small = this.$attrs["small"]
     }
   }
-};
+}
 </script>

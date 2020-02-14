@@ -5,7 +5,7 @@
 </template>
 
 <script>
-export default {};
+export default {}
 </script>
 <style scoped>
 @import url("https://fonts.googleapis.com/css?family=Pacifico&display=swap");

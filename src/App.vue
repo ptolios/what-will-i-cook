@@ -9,10 +9,10 @@
 </template>
 
 <script lang="ts">
-import Vue from "vue";
+import Vue from "vue"
 
-import AppHeader from "@/components/Header.vue";
-import AppFooter from "@/components/Footer.vue";
+import AppHeader from "@/components/Header.vue"
+import AppFooter from "@/components/Footer.vue"
 
 export default Vue.extend({
   name: "App",
@@ -23,21 +23,21 @@ export default Vue.extend({
   data() {
     return {
       invertedScroll: false
-    };
+    }
   },
   methods: {
     manageHeaderVisibility() {
-      this.invertedScroll = this.$route.path == "/" ? true : false;
+      this.invertedScroll = this.$route.path == "/" ? true : false
     }
   },
   // Control Header visibility
   updated() {
-    this.manageHeaderVisibility();
+    this.manageHeaderVisibility()
   },
   created() {
-    this.manageHeaderVisibility();
+    this.manageHeaderVisibility()
   }
-});
+})
 </script>
 
 <style>

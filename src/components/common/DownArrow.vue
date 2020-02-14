@@ -9,7 +9,7 @@
 <script>
 export default {
   props: ["target", "options"]
-};
+}
 </script>
 
 <style scoped>

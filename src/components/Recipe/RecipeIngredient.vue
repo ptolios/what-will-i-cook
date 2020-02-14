@@ -13,7 +13,7 @@
 <script>
 export default {
   props: ["ingredient"]
-};
+}
 </script>
 
 <style scoped>

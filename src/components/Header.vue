@@ -9,13 +9,13 @@
 </template>
 
 <script>
-import AppTitle from "@/components/common/AppTitle.vue";
+import AppTitle from "@/components/common/AppTitle.vue"
 export default {
   components: {
     AppTitle
   },
   props: ["invertedScroll"]
-};
+}
 </script>
 
 <style scoped>

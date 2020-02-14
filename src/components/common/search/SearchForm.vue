@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import SearchBox from "@/components/common/search/SearchBox.vue";
+import SearchBox from "@/components/common/search/SearchBox.vue"
 export default {
   components: {
     "search-box": SearchBox
@@ -21,15 +21,15 @@ export default {
   data() {
     return {
       query: ""
-    };
+    }
   },
   methods: {
     submitted(event) {
-      this.$emit("submitQuery", event);
-      this.$router.push({ path: "/search", query: { query: event } });
+      this.$emit("submitQuery", event)
+      this.$router.push({ path: "/search", query: { query: event } })
     }
   }
-};
+}
 </script>
 
 <style></style>

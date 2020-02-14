@@ -9,5 +9,5 @@
 <script>
 export default {
   props: ["svgid", "size", "fill", "href"]
-};
+}
 </script>

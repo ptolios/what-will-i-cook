@@ -24,14 +24,14 @@
 </template>
 
 <script>
-import RecipeIngredient from "@/components/Recipe/RecipeIngredient.vue";
+import RecipeIngredient from "@/components/Recipe/RecipeIngredient.vue"
 
 export default {
   components: {
     RecipeIngredient
   },
   props: ["ingredients"]
-};
+}
 </script>
 
 <style></style>
