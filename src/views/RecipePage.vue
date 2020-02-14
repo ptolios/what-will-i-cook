@@ -61,12 +61,12 @@
 </template>
 
 <script>
-import { config } from "@/plugins/api-config";
-import { fetchRecipe, getSimilarRecipes } from "@/api-utils/spoonacular-api";
-import RecipeOverview from "@/components/Recipe/RecipeOverview.vue";
-import RecipeIngredients from "@/components/Recipe/RecipeIngredients.vue";
-import RecipeInstructions from "@/components/Recipe/RecipeInstructions.vue";
-import SimilarRecipe from "@/components/Recipe/SimilarRecipe.vue";
+import { config } from "@/plugins/api-config"
+import { fetchRecipe, getSimilarRecipes } from "@/api-utils/spoonacular-api"
+import RecipeOverview from "@/components/Recipe/RecipeOverview.vue"
+import RecipeIngredients from "@/components/Recipe/RecipeIngredients.vue"
+import RecipeInstructions from "@/components/Recipe/RecipeInstructions.vue"
+import SimilarRecipe from "@/components/Recipe/SimilarRecipe.vue"
 
 export default {
   components: {
@@ -82,59 +82,59 @@ export default {
       similarRecipes: undefined,
       loading: true,
       error: false
-    };
+    }
   },
   computed: {
     image() {
-      return this.recipe.image;
+      return this.recipe.image
     },
     ingredients() {
-      return this.recipe.extendedIngredients;
+      return this.recipe.extendedIngredients
     },
     instructions() {
-      return this.recipe.analyzedInstructions[0].steps;
+      return this.recipe.analyzedInstructions[0].steps
     },
     narrowContainer() {
       switch (this.$vuetify.breakpoint.name) {
         case "xs":
-          return "";
+          return ""
         case "sm":
-          return "max-width: 80%";
+          return "max-width: 80%"
         case "md":
-          return "max-width: 70%";
+          return "max-width: 70%"
         case "lg":
-          return "max-width: 60%";
+          return "max-width: 60%"
       }
       // else
-      return "max-width: 50%;";
+      return "max-width: 50%;"
     }
   },
   mounted: function() {
-    const id = this.$route.params.id;
+    const id = this.$route.params.id
     this.$nextTick(function() {
       fetchRecipe({ id }, config)
         .then(response => {
-          const { data } = response;
-          this.recipe = data;
-          this.loading = false;
+          const { data } = response
+          this.recipe = data
+          this.loading = false
         })
         .catch(error => {
-          this.loading = false;
-          this.error = error;
-        });
-    });
+          this.loading = false
+          this.error = error
+        })
+    })
     this.$nextTick(function() {
       getSimilarRecipes({ id, number: 5 }, config)
         .then(response => {
-          this.similarRecipes = response.data;
+          this.similarRecipes = response.data
         })
         .catch(error => {
-          this.loading = false;
-          this.error = error;
-        });
-    });
+          this.loading = false
+          this.error = error
+        })
+    })
   }
-};
+}
 </script>
 
 <style scoped></style>

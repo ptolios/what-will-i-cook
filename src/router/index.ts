@@ -1,10 +1,10 @@
-import Vue from "vue";
-import VueRouter from "vue-router";
-import Home from "@/views/Home.vue";
-import RecipePage from "@/views/RecipePage.vue";
-import SearchResults from "@/views/SearchResults.vue";
+import Vue from "vue"
+import VueRouter from "vue-router"
+import Home from "@/views/Home.vue"
+import RecipePage from "@/views/RecipePage.vue"
+import SearchResults from "@/views/SearchResults.vue"
 
-Vue.use(VueRouter);
+Vue.use(VueRouter)
 
 const routes = [
   {
@@ -31,11 +31,11 @@ const routes = [
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/About.vue")
   }
-];
+]
 
 const router = new VueRouter({
   mode: "history",
   routes
-});
+})
 
-export default router;
+export default router
