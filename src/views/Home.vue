@@ -37,7 +37,7 @@
           <div class="pa-4">
             <div class="text-center">
               <app-btn
-                @btnclicked="randomRecipeId"
+                @btnclicked="goToRandomRecipe"
                 color="primary"
                 class="font-weight-bold"
                 x-large
@@ -56,14 +56,14 @@
 </template>
 
 <script lang="ts">
-import { config } from "@/plugins/api-config";
-import AppTitle from "@/components/common/AppTitle.vue";
-import AppBtn from "@/components/common/AppBtn.vue";
-import DownArrow from "@/components/common/DownArrow.vue";
-import RecipesGrid from "@/components/RecipesGrid.vue";
-import SearchForm from "@/components/common/search/SearchForm.vue";
-import { getRandomRecipes } from "@/api-utils/spoonacular-api";
-import router from "@/router";
+import { config } from "@/plugins/api-config"
+import AppTitle from "@/components/common/AppTitle.vue"
+import AppBtn from "@/components/common/AppBtn.vue"
+import DownArrow from "@/components/common/DownArrow.vue"
+import RecipesGrid from "@/components/RecipesGrid.vue"
+import SearchForm from "@/components/common/search/SearchForm.vue"
+import { getRandomRecipes } from "@/api-utils/spoonacular-api"
+import router from "@/router"
 
 export default {
   components: {
@@ -79,18 +79,18 @@ export default {
         offset: 56,
         duration: 800
       }
-    };
+    }
   },
   methods: {
-    randomRecipeId() {
-      getRandomRecipes({ number: 1 }, config).then(response => {
-        const { data } = response;
-        const id = data.recipes[0].id;
-        router.push({ name: "recipe", params: { id } });
-      });
+    goToRandomRecipe: async function() {
+      const { data, status } = await getRandomRecipes({ number: 1 }, config)
+      if (status == "200") {
+        const id = data.recipes[0].id
+        router.push({ name: "recipe", params: { id } })
+      }
     }
   }
-};
+}
 </script>
 
 <style scoped>
