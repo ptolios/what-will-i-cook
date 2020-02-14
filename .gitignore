@@ -22,3 +22,5 @@ yarn-error.log*
 *.sw?
 cypress/screenshots
 cypress/videos
+.eslintrc.json
+.prettierrc.json
