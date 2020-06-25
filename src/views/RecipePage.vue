@@ -49,7 +49,9 @@
                   :href="'/recipe/' + similarRecipe.id"
                   :title="similarRecipe.title"
                   :readyInMinutes="similarRecipe.readyInMinutes"
-                  :imageUrl="baseImageUrl + similarRecipe.image"
+                  :imageUrl="
+                    `${baseImageUrl}${similarRecipe.id}-312x150.${similarRecipe.imageType}`
+                  "
                 ></similar-recipe>
               </v-col>
             </v-row>
