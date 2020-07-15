@@ -1,5 +1,5 @@
 <template>
-  <v-card color="primary" dark>
+  <v-card color="primary" :href="'/recipe/' + recipe.id" dark>
     <v-img :src="imageUrl" aspect-ratio="1">
       <preptime-chip color="primary" small>
         {{ recipe.readyInMinutes }}
@@ -11,16 +11,6 @@
         style="font-family: Poppins !important;"
         >{{ recipe.title }}</v-card-title
       >
-      <app-btn
-        :href="'/recipe/' + recipe.id"
-        class="mx-auto mt-2 mb-4"
-        color="secondary"
-        small
-      >
-        <span class="font-weight-black">
-          Details
-        </span>
-      </app-btn>
     </div>
   </v-card>
 </template>
@@ -30,7 +20,6 @@ import AppBtn from "@/components/common/AppBtn.vue"
 import PreptimeChip from "@/components/common/PreptimeChip.vue"
 export default {
   components: {
-    AppBtn,
     PreptimeChip
   },
   props: {
@@ -45,10 +34,6 @@ export default {
 }
 </script>
 <style scoped>
-.container {
-  padding: 0;
-}
-
 .v-card__title {
   word-break: unset !important;
 }
