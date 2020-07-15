@@ -1,5 +1,5 @@
 <template>
-  <v-container :key="$route.fullPath">
+  <v-container :style="responsiveContainer">
     <v-row class="flex-grow-0" justify="start" align="baseline">
       <v-col cols="12">
         <search-form
@@ -88,6 +88,22 @@ export default {
         number: 12,
         offset: 0
       }
+    }
+  },
+  computed: {
+    responsiveContainer() {
+      switch (this.$vuetify.breakpoint.name) {
+        case "xs":
+          return ""
+        case "sm":
+          return "max-width: 80%"
+        case "md":
+          return "max-width: 70%"
+        case "lg":
+          return "max-width: 60%"
+      }
+      // else
+      return "max-width: 50%;"
     }
   },
   watch: {
