@@ -5,7 +5,7 @@
         Instructions
       </v-subheader>
     </div>
-    <v-list-item-group>
+    <v-list-item-group v-if="instructions.length">
       <recipe-instruction
         v-for="(instruction, index) in instructions"
         :key="index"
@@ -18,6 +18,9 @@
         </template>
       </recipe-instruction>
     </v-list-item-group>
+    <v-list-item v-else>
+      Sorry, there are no instructions...
+    </v-list-item>
   </v-list>
 </template>
 

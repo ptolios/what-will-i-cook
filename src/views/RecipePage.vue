@@ -94,7 +94,9 @@ export default {
       return this.recipe.extendedIngredients
     },
     instructions() {
-      return this.recipe.analyzedInstructions[0].steps
+      return !this.recipe.analyzedInstructions.length
+        ? []
+        : this.recipe.analyzedInstructions[0].steps
     },
     narrowContainer() {
       switch (this.$vuetify.breakpoint.name) {
